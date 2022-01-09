@@ -6,20 +6,18 @@
        FlyoutBackgroundColor="#323232"
        BackgroundColor="DarkGray"
        x:Class="GyverMatrix.AppShell">
-    <FlyoutItem Title="Подключение">
-        <FlyoutItem.Style>
-            <Style TargetType="Label">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style ApplyToDerivedTypes="True" Class="FlyoutItemLabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="White"/>
             </Style>
-        </FlyoutItem.Style>
+        </ResourceDictionary>
+
+    </Shell.Resources>
+    <FlyoutItem Title="Подключение">
         <ShellContent ContentTemplate="{DataTemplate local:ConnectPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Настройки матрицы" >
-        <FlyoutItem.Style>
-            <Style TargetType="Label">
-                <Setter Property="TextColor" Value="White"/>
-            </Style>
-        </FlyoutItem.Style>
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Эффекты">
