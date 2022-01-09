@@ -6,14 +6,16 @@
        FlyoutBackgroundColor="#323232"
        BackgroundColor="DarkGray"
        x:Class="GyverMatrix.AppShell">
-    <Shell.Resources>
-        <ResourceDictionary>
-            <Style ApplyToDerivedTypes="True" Class="FlyoutItemLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White"/>
-            </Style>
-        </ResourceDictionary>
-
-    </Shell.Resources>
+    <Shell.ItemTemplate>
+        <DataTemplate >
+            <StackLayout>
+                <Label Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="30"
+                       Margin="10,20,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.ItemTemplate>
     <FlyoutItem Title="Подключение">
         <ShellContent ContentTemplate="{DataTemplate local:ConnectPage}" />
     </FlyoutItem>
