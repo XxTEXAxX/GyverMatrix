@@ -5,11 +5,11 @@
              Title="Матрица 16x16"
              x:Class="GyverMatrix.Views.SettingsPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Black">
-            
-                <Label Text="Яркость" HorizontalOptions="Center"  />
-                <Slider x:Name="BrightnessSlider" Minimum="5"  Maximum="255" />
-            
-        </StackLayout>
+        <AbsoluteLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <StackLayout Orientation="Horizontal" Padding="15">
+                <Label Text="Яркость" HorizontalOptions="Center"/>
+                <Slider x:Name="BrightnessSlider" Minimum="5"  Maximum="255" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
