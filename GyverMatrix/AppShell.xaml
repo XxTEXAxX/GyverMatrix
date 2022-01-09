@@ -2,19 +2,25 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:GyverMatrix.Views"
+       xmlns:system="clr-namespace:System;assembly=netstandard"
        Title="GyverMatrix"
        FlyoutBackgroundColor="#323232"
        BackgroundColor="DarkGray"
        x:Class="GyverMatrix.AppShell">
-    <Shell.Resources>
-        <Style TargetType="{x:Type Label}">
-            <Setter Property="TextColor" Value="White"/>
-        </Style>
-    </Shell.Resources>
     <FlyoutItem Title="Подключение">
+        <FlyoutItem.Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </FlyoutItem.Style>
         <ShellContent ContentTemplate="{DataTemplate local:ConnectPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Настройки матрицы" >
+        <FlyoutItem.Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </FlyoutItem.Style>
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Эффекты">
