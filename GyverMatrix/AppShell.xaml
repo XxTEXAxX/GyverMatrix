@@ -5,10 +5,13 @@
        Title="GyverMatrix"
        FlyoutBackgroundColor="#323232"
        BackgroundColor="DarkGray"
-       
        x:Class="GyverMatrix.AppShell">
-        
-    <FlyoutItem Title="Подключение" >
+    <Shell.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </Shell.Resources>
+    <FlyoutItem Title="Подключение">
         <ShellContent ContentTemplate="{DataTemplate local:ConnectPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Настройки матрицы" >
@@ -29,5 +32,4 @@
     <FlyoutItem Title="О приложении">
         <ShellContent ContentTemplate="{DataTemplate local:InfoPage}" />
     </FlyoutItem>
-
 </Shell>
