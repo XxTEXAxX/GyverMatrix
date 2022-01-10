@@ -20,9 +20,9 @@
                     <Label Text="Яркость" />
                     <Slider x:Name="BrightnessSlider"
                             HorizontalOptions="FillAndExpand"
-                            Minimum="0"
                             Maximum="255"
-                            ValueChanged="BrightnessChanged" />
+                            Minimum="10"
+                            ValueChanged="BrightnessSlider_OnValueChanged"/>
                     <Label  x:Name="BrightnessText"
                             Text="0" />
                 </StackLayout>
