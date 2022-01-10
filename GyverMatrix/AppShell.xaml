@@ -11,7 +11,7 @@
             <StackLayout>
                 <Label Text="{Binding Title}"
                        TextColor="White"
-                       FontSize="Medium"
+                       FontSize="25"
                        Margin="10,20,0,0"/>
             </StackLayout>
         </DataTemplate>
