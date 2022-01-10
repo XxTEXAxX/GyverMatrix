@@ -8,7 +8,7 @@
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="FontSize"
-                    Value="20" />
+                    Value="18" />
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -32,7 +32,7 @@
                        HorizontalOptions="Center" />
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Демо-режим"
+                    <Label Text="Авторежим"
                            VerticalOptions="Center" />
                     <Switch x:Name="DemoSwitch"
                             PropertyChanged="DemoSwitch_PropertyChanged" />
@@ -46,7 +46,7 @@
 
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="StartAndExpand">
-                    <Label Text="Время автосмены - "
+                    <Label Text="Время режима - "
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand" />
                     <Entry x:Name="AutoTime1"
@@ -58,7 +58,7 @@
 
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="StartAndExpand">
-                    <Label Text="Демо-режим через - "
+                    <Label Text="Авторежим через - "
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand" />
                     <Entry x:Name="AutoTime2"

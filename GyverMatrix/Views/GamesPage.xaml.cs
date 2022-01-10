@@ -32,5 +32,10 @@ namespace GyverMatrix.Views
 
             InitializeComponent();
         }
+
+        private void GameSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

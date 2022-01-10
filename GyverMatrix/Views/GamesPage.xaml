@@ -4,7 +4,17 @@
              BackgroundColor="Black"
              Title="Игры"
              x:Class="GyverMatrix.Views.GamesPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Small"/>
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
+
+        
+    
         <StackLayout Padding="10">
             
             <Picker x:Name="Games" Title="Игра:" HorizontalOptions="FillAndExpand">
@@ -16,7 +26,12 @@
                     <x:String>Арканоид</x:String>
                 </Picker.Items>
             </Picker>
-            
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Использовать в демо-режиме"/>
+                <Switch x:Name="GameSwitch" PropertyChanged="GameSwitch_PropertyChanged"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
