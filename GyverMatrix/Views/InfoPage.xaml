@@ -1,12 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="Black"
+             Title="О приложении"
              x:Class="GyverMatrix.Views.InfoPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Black">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout 
+                Padding="10"
+                Spacing="10">
+            
+                <Label Text="GyverMatrix (Xamarin Edition)"
+                    FontSize="Title"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout Spacing="2">
+                        <Label Text="Разработчики:"
+                        HorizontalOptions="StartAndExpand" />
+                
+                    <Label Text="Медведев Дмитрий (aka Texa)"
+                        
+                        HorizontalOptions="StartAndExpand" />
+                    
+                    <Label Text="ДИМААААССССС (Сори, не знаю твое полное имя :( )"
+                        HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+                
+                <StackLayout Spacing="2">
+                    <Label Text="Версия приложения:"
+                        HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="10.01.22.01"
+                        
+                        HorizontalOptions="StartAndExpand" />
+
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

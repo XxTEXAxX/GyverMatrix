@@ -15,5 +15,10 @@ namespace GyverMatrix.Views {
                 await udpHelper.Send("");
             }
         }
+
+        private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

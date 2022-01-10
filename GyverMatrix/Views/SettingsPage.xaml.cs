@@ -46,5 +46,15 @@ namespace GyverMatrix.Views {
 
         private void BrightnessSlider_OnValueChanged(object sender, ValueChangedEventArgs e) =>
             BrightnessText.Text = ((int)((Slider)sender).Value).ToString();
+
+        private void AutoSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void RandomSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,30 @@ namespace GyverMatrix.Views
         {
             InitializeComponent();
         }
+
+        private void Stop_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Start_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Send_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpeedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
+        private void BrightnessSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
     }
 }

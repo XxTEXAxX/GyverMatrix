@@ -32,16 +32,32 @@
                        HorizontalOptions="Center" />
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Авторежим"
+                    <Label Text="Ручной"
                            VerticalOptions="Center" />
                     <Switch x:Name="DemoSwitch"
                             PropertyChanged="DemoSwitch_PropertyChanged" />
+                    <Label Text="Авто"
+                           VerticalOptions="Center" />
                     <Button x:Name="Undo"
                             Text="Пред."
                             Clicked="Undo_Clicked" />
                     <Button x:Name="Next"
                             Text="След."
                             Clicked="Next_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Автосмена режима"
+                           VerticalOptions="Center" />
+                    <Switch x:Name="AutoSwitch"
+                            PropertyChanged="AutoSwitch_PropertyChanged" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Случайный порядок"
+                           VerticalOptions="Center" />
+                    <Switch x:Name="RandomSwitch"
+                            PropertyChanged="RandomSwitch_PropertyChanged" />
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal"

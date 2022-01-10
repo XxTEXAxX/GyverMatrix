@@ -8,6 +8,10 @@
             <Entry x:Name="IpAdress" Text="192.168.4.1" Placeholder="IpAdress"/>
             <Entry x:Name="Port" Text="2390" Placeholder="Port"/>
             <Button x:Name="ConnectButton" Text="Подключиться" BackgroundColor="Blue" Clicked="ConnectButton_OnClicked"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Подключаться при запуске"/>
+                <Switch x:Name="AutoConnectSwitch" PropertyChanged="AutoConnectSwitch_PropertyChanged"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
