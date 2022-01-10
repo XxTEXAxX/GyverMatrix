@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="Black"
+             Title="Игры"
              x:Class="GyverMatrix.Views.GamesPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Black">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Padding="10" Spacing="10">
+            
+            <Label Text="Игра:" FontSize="Small" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+            
+            <Picker x:Name="Games" Title="Игра:">
+                <Picker.Items>
+                    <x:String>Змейка</x:String>
+                    <x:String>Тетрис</x:String>
+                    <x:String>Лаюиринт</x:String>
+                    <x:String>Динозаврик</x:String>
+                    <x:String>Арканоид</x:String>
+                </Picker.Items>
+            </Picker>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
