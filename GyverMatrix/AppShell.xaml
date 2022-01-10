@@ -4,14 +4,14 @@
        xmlns:local="clr-namespace:GyverMatrix.Views"
        Title="GyverMatrix"
        FlyoutBackgroundColor="#323232"
-       BackgroundColor="DarkGray"
+       BackgroundColor="#323232"
        x:Class="GyverMatrix.AppShell">
     <Shell.ItemTemplate>
         <DataTemplate >
             <StackLayout>
                 <Label Text="{Binding Title}"
                        TextColor="White"
-                       FontSize="15"
+                       FontSize="Medium"
                        Margin="10,20,0,0"/>
             </StackLayout>
         </DataTemplate>
