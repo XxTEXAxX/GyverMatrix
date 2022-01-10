@@ -7,64 +7,117 @@
              x:Class="GyverMatrix.Views.SettingsPage">
     <ContentPage.Resources>
         <Style TargetType="Label">
-            <Setter Property="FontSize" Value="Title"/>
+            <Setter Property="FontSize"
+                    Value="20" />
         </Style>
     </ContentPage.Resources>
-    <ContentPage.Content >
+    <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="10" Spacing="10">
+            <StackLayout Padding="10"
+                         Spacing="10">
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Яркость"/>
-                    <Slider x:Name="BrightnessSlider" HorizontalOptions="FillAndExpand" Minimum="0" Maximum="255" ValueChanged="BrightnessChanged"/>
-                    <Label  x:Name="BrightnessText" Text="0" />
+                    <Label Text="Яркость" />
+                    <Slider x:Name="BrightnessSlider"
+                            HorizontalOptions="FillAndExpand"
+                            Minimum="0"
+                            Maximum="255"
+                            ValueChanged="BrightnessChanged" />
+                    <Label  x:Name="BrightnessText"
+                            Text="0" />
                 </StackLayout>
 
-                <Label Text="Настройки режимов" FontSize="Subtitle"  HorizontalOptions="Center"/>
+                <Label Text="Настройки режимов"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Center" />
 
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Демо-режим" VerticalOptions="Center"/>
-                    <Switch x:Name="DemoSwitch" PropertyChanged="DemoSwitch_PropertyChanged"/>
-                    <Button x:Name="Undo" Text="Пред."  Clicked="Undo_Clicked"/>
-                    <Button x:Name="Next" Text="След." Clicked="Next_Clicked"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Демо-режим"
+                           VerticalOptions="Center" />
+                    <Switch x:Name="DemoSwitch"
+                            PropertyChanged="DemoSwitch_PropertyChanged" />
+                    <Button x:Name="Undo"
+                            Text="Пред."
+                            Clicked="Undo_Clicked" />
+                    <Button x:Name="Next"
+                            Text="След."
+                            Clicked="Next_Clicked" />
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Время автосмены - " VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                    <Entry x:Name="AutoTime1" Placeholder="сек." />
-                    <Button x:Name="AutoCheck1" Text="Установить"  Clicked="AutoCheck1_Clicked"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="StartAndExpand">
+                    <Label Text="Время автосмены - "
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry x:Name="AutoTime1"
+                           Placeholder="сек." />
+                    <Button x:Name="AutoCheck1"
+                            Text="Установить"
+                            Clicked="AutoCheck1_Clicked" />
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Демо-режим через - "  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                    <Entry x:Name="AutoTime2" Placeholder="мин." />
-                    <Button x:Name="AutoCheck2" Text="Установить"  Clicked="AutoCheck2_Clicked"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="StartAndExpand">
+                    <Label Text="Демо-режим через - "
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry x:Name="AutoTime2"
+                           Placeholder="мин." />
+                    <Button x:Name="AutoCheck2"
+                            Text="Установить"
+                            Clicked="AutoCheck2_Clicked" />
                 </StackLayout>
 
-                <Label Text="Прочие настройки" FontSize="Subtitle"  HorizontalOptions="Center"/>
+                <Label Text="Прочие настройки"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Center" />
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Ограничение по току"  VerticalOptions="Center"/>
-                    <Entry x:Name="Curret" Placeholder="мА" />
-                    <Button x:Name="AutoCheck3" Text="Установить"  Clicked="AutoCheck3_Clicked"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="StartAndExpand">
+                    <Label Text="Ограничение по току"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="Curret"
+                           Placeholder="мА" />
+                    <Button x:Name="AutoCheck3"
+                            Text="Установить"
+                            Clicked="AutoCheck3_Clicked" />
                 </StackLayout>
 
-                <Label Text="Настройки сети" FontSize="Subtitle"  HorizontalOptions="Center"/>
+                <Label Text="Настройки сети"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Center" />
 
-                <Label Text="Настройки точки доступа"   VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                <Entry x:Name="NameEntry1" Placeholder="Название сети" />
-                <Entry x:Name="PassEntry1" Placeholder="Пароль сети" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Включить точку доступа"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                    <Switch x:Name="NetSwitch" Grid.Column="1" PropertyChanged="NetSwitch_PropertyChanged"/>
+                <Label Text="Настройки точки доступа"
+                       VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" />
+                <Entry x:Name="NameEntry1"
+                       Placeholder="Название сети" />
+                <Entry x:Name="PassEntry1"
+                       Placeholder="Пароль сети" />
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="StartAndExpand">
+                    <Label Text="Включить точку доступа"
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand" />
+                    <Switch x:Name="NetSwitch"
+                            PropertyChanged="NetSwitch_PropertyChanged" />
                 </StackLayout>
-                <Button x:Name="NetSet1" Text="Установить"  Clicked="NetSet1_Clicked"/>
+                <Button x:Name="NetSet1"
+                        Text="Установить"
+                        Clicked="NetSet1_Clicked" />
 
-                <Label Text="Настройки подключения"   VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                <Entry x:Name="NameEntry2" Placeholder="Название сети" />
-                <Entry x:Name="PassEntry2" Placeholder="Пароль сети" />
-                <Entry x:Name="IpEntry2" Placeholder="Локальный IP-адресс в сети" />
-                <Button x:Name="NetSet2" Text="Установить"  Clicked="NetSet2_Clicked"/>
+                <Label Text="Настройки подключения"
+                       VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" />
+                <Entry x:Name="NameEntry2"
+                       Placeholder="Название сети" />
+                <Entry x:Name="PassEntry2"
+                       Placeholder="Пароль сети" />
+                <Entry x:Name="IpEntry2"
+                       Placeholder="Локальный IP-адресс в сети" />
+                <Button x:Name="NetSet2"
+                        Text="Установить"
+                        Clicked="NetSet2_Clicked" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
