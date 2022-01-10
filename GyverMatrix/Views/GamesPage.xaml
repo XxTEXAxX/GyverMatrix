@@ -5,15 +5,13 @@
              Title="Игры"
              x:Class="GyverMatrix.Views.GamesPage">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Padding="10" Spacing="10">
+        <StackLayout Padding="10">
             
-            <Label Text="Игра:" FontSize="Small" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-            
-            <Picker x:Name="Games" Title="Игра:">
+            <Picker x:Name="Games" Title="Игра:" HorizontalOptions="FillAndExpand">
                 <Picker.Items>
                     <x:String>Змейка</x:String>
                     <x:String>Тетрис</x:String>
-                    <x:String>Лаюиринт</x:String>
+                    <x:String>Лабиринт</x:String>
                     <x:String>Динозаврик</x:String>
                     <x:String>Арканоид</x:String>
                 </Picker.Items>
