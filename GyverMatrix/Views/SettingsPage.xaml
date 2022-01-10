@@ -5,67 +5,67 @@
              BackgroundColor="Black"
              Title="Матрица 16x16"
              x:Class="GyverMatrix.Views.SettingsPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Title"/>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content >
-
         <ScrollView>
-            <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Padding="10" Spacing="10">
-            
-                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+            <StackLayout Padding="10" Spacing="10">
+
+                <StackLayout Orientation="Horizontal">
                     <Label Text="Яркость"/>
-                    <Slider x:Name="BrightnessSlider"  WidthRequest="200" Minimum="0" Maximum="255" ValueChanged="BrightnessChanged"/>
+                    <Slider x:Name="BrightnessSlider" HorizontalOptions="FillAndExpand" Minimum="0" Maximum="255" ValueChanged="BrightnessChanged"/>
                     <Label  x:Name="BrightnessText" Text="0" />
                 </StackLayout>
 
                 <Label Text="Настройки режимов" FontSize="Subtitle"  HorizontalOptions="Center"/>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Демо-режим" FontSize="Micro" VerticalOptions="Center"/>
-                    <Switch x:Name="DemoSwitch" Grid.Column="1" PropertyChanged="DemoSwitch_PropertyChanged"/>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Демо-режим" VerticalOptions="Center"/>
+                    <Switch x:Name="DemoSwitch" PropertyChanged="DemoSwitch_PropertyChanged"/>
                     <Button x:Name="Undo" Text="Пред."  Clicked="Undo_Clicked"/>
                     <Button x:Name="Next" Text="След." Clicked="Next_Clicked"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Время автосмены - " FontSize="Micro" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Время автосмены - " VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
                     <Entry x:Name="AutoTime1" Placeholder="сек." />
-                    <Button x:Name="AutoCheck1" Text="Установить" FontSize="Micro" Clicked="AutoCheck1_Clicked"/>
+                    <Button x:Name="AutoCheck1" Text="Установить"  Clicked="AutoCheck1_Clicked"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Демо-режим через - " FontSize="Micro" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Демо-режим через - "  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
                     <Entry x:Name="AutoTime2" Placeholder="мин." />
-                    <Button x:Name="AutoCheck2" Text="Установить" FontSize="Micro" Clicked="AutoCheck2_Clicked"/>
+                    <Button x:Name="AutoCheck2" Text="Установить"  Clicked="AutoCheck2_Clicked"/>
                 </StackLayout>
 
                 <Label Text="Прочие настройки" FontSize="Subtitle"  HorizontalOptions="Center"/>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Ограничение по току" FontSize="Micro" VerticalOptions="Center"/>
+                    <Label Text="Ограничение по току"  VerticalOptions="Center"/>
                     <Entry x:Name="Curret" Placeholder="мА" />
-                    <Button x:Name="AutoCheck3" Text="Установить" FontSize="Micro" Clicked="AutoCheck3_Clicked"/>
+                    <Button x:Name="AutoCheck3" Text="Установить"  Clicked="AutoCheck3_Clicked"/>
                 </StackLayout>
 
                 <Label Text="Настройки сети" FontSize="Subtitle"  HorizontalOptions="Center"/>
 
-                <Label Text="Настройки точки доступа" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Настройки точки доступа"   VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
                 <Entry x:Name="NameEntry1" Placeholder="Название сети" />
                 <Entry x:Name="PassEntry1" Placeholder="Пароль сети" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
-                    <Label Text="Включить точку доступа" FontSize="Micro" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Включить точку доступа"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
                     <Switch x:Name="NetSwitch" Grid.Column="1" PropertyChanged="NetSwitch_PropertyChanged"/>
                 </StackLayout>
-                <Button x:Name="NetSet1" Text="Установить" FontSize="Micro" Clicked="NetSet1_Clicked"/>
-            
-                <Label Text="Настройки подключения" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="NetSet1" Text="Установить"  Clicked="NetSet1_Clicked"/>
+
+                <Label Text="Настройки подключения"   VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
                 <Entry x:Name="NameEntry2" Placeholder="Название сети" />
                 <Entry x:Name="PassEntry2" Placeholder="Пароль сети" />
                 <Entry x:Name="IpEntry2" Placeholder="Локальный IP-адресс в сети" />
-                <Button x:Name="NetSet2" Text="Установить" FontSize="Micro" Clicked="NetSet2_Clicked"/>
-            
-         
-                
-                
-        </StackLayout>
+                <Button x:Name="NetSet2" Text="Установить"  Clicked="NetSet2_Clicked"/>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
