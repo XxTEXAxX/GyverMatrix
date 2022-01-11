@@ -8,16 +8,39 @@ namespace GyverMatrix.Views {
         public ConnectPage() =>
             InitializeComponent();
 
-        private async void ConnectButton_OnClicked(object sender, EventArgs e)
+<<<<<<< HEAD
+        private void ConnectButton_OnClicked(object sender, EventArgs e)
         {
-            using (var udpHelper = new UdpHelper("852837632",45))
-            {
+            //using (var udpHelper = new UdpHelper())
+            //{
+
+                //udpHelper.Connect(IpAdress.Text,int.Parse(Port.Text));
+            //}
+=======
+        private async void ConnectButton_OnClicked(object sender, EventArgs e) {
+            using (var udpHelper = new UdpHelper()) {
+                udpHelper.Connect("3223", 34);
                 await udpHelper.Send("");
             }
+>>>>>>> 3ea1919df69cff8c103df92a996af5af0362ea07
         }
 
-        private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
+        private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
+
+            if(AutoConnectSwitch.IsToggled)
+            {
+                using (var udpHelper = new UdpHelper())
+                {
+                    udpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
+                    udpHelper.Send("$4 0 255;");
+                }
+            }else{
+                using (var udpHelper = new UdpHelper())
+                {
+                    udpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
+                    udpHelper.Send("$4 0 20;");
+                }
+            }
 
         }
     }

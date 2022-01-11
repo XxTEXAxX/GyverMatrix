@@ -4,19 +4,12 @@
              BackgroundColor="Black"
              Title="Эффекты"
              x:Class="GyverMatrix.Views.EffectsPage">
-
-    <ContentPage.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize"
-                    Value="18" />
-        </Style>
-    </ContentPage.Resources>
-    
-    <ContentPage.Content >
-        
+    <ContentPage.Content>
         <StackLayout Padding="10">
 
-            <Picker x:Name="Games" Title="Эффект:" HorizontalOptions="FillAndExpand">
+            <Picker x:Name="Games"
+                    Title="Эффект:"
+                    HorizontalOptions="FillAndExpand">
                 <Picker.Items>
                     <x:String>Змейка</x:String>
                     <x:String>Тетрис</x:String>
@@ -25,37 +18,35 @@
                     <x:String>Арканоид</x:String>
                 </Picker.Items>
             </Picker>
-
             <StackLayout Orientation="Horizontal">
-                <Label Text="Часы поверх эффекта"/>
-                <Switch x:Name="HourSwitch" PropertyChanged="HourSwitch_PropertyChanged"/>
+                <Label Text="Часы поверх эффекта" />
+                <Switch x:Name="HourSwitch"
+                        PropertyChanged="HourSwitch_PropertyChanged" />
             </StackLayout>
-
             <StackLayout Orientation="Horizontal">
-                <Label Text="Использовать в демо-режиме"/>
-                <Switch x:Name="EffectSwitch" PropertyChanged="EffectSwitch_PropertyChanged"/>
+                <Label Text="Использовать в демо-режиме" />
+                <Switch x:Name="EffectSwitch"
+                        PropertyChanged="EffectSwitch_PropertyChanged" />
             </StackLayout>
-
             <StackLayout Orientation="Horizontal">
                 <Label Text="Скорость" />
                 <Slider x:Name="SpeedSlider"
-                            HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="10"
-                            ValueChanged="SpeedSlider_ValueChanged"/>
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="255"
+                        Minimum="10"
+                        ValueChanged="SpeedSlider_ValueChanged" />
                 <Label  x:Name="SpeedText"
-                            Text="0" />
+                        Text="0" />
             </StackLayout>
-
             <StackLayout Orientation="Horizontal">
                 <Label Text="Яркость" />
                 <Slider x:Name="BrightnessSlider"
-                            HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="10"
-                            ValueChanged="BrightnessSlider_ValueChanged"/>
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="255"
+                        Minimum="10"
+                        ValueChanged="BrightnessSlider_ValueChanged" />
                 <Label  x:Name="BrightnessText"
-                            Text="0" />
+                        Text="0" />
             </StackLayout>
 
         </StackLayout>
