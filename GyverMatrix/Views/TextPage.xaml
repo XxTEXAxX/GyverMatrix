@@ -4,32 +4,28 @@
              BackgroundColor="Black"
              Title="Бегущая строка"
              x:Class="GyverMatrix.Views.TextPage">
-
-    <ContentPage.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize"
-                    Value="18" />
-        </Style>
-    </ContentPage.Resources>
-
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Padding="8">
+            <Entry x:Name="Text"
+                   Placeholder="Текст бегущей строки" />
 
-            <Entry x:Name="Text" Placeholder="Текст бегущей строки"/>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
                 <Button x:Name="Send"
-                            Text="Отправить"
-                            Clicked="Send_Clicked" />
+                        Text="Отправить"
+                        Clicked="Send_Clicked" />
                 <Button x:Name="Start"
-                            Text="Пуск"
-                            Clicked="Start_Clicked" />
+                        Text="Пуск"
+                        Clicked="Start_Clicked" />
                 <Button x:Name="Stop"
-                            Text="Стоп"
-                            Clicked="Stop_Clicked" />
+                        Text="Стоп"
+                        Clicked="Stop_Clicked" />
             </StackLayout>
 
-            <Picker x:Name="Color" Title="Заливка:" HorizontalOptions="FillAndExpand">
+            <Picker x:Name="Color"
+                    Title="Заливка:"
+                    HorizontalOptions="FillAndExpand">
                 <Picker.Items>
                     <x:String>Вся строка одним цветом</x:String>
                     <x:String>Радуга вдоль текста</x:String>
@@ -38,27 +34,25 @@
             </Picker>
 
             <StackLayout Orientation="Horizontal">
-            <Label Text="Скорость" />
-            <Slider x:Name="SpeedSlider"
-                            HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="10"
-                            ValueChanged="SpeedSlider_ValueChanged"/>
-            <Label  x:Name="SpeedText"
-                            Text="0" />
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Яркость" />
-            <Slider x:Name="BrightnessSlider"
-                            HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="10"
-                            ValueChanged="BrightnessSlider_ValueChanged"/>
-            <Label  x:Name="BrightnessText"
-                            Text="0" />
-        </StackLayout>
-
+                <Label Text="Скорость" />
+                <Slider x:Name="SpeedSlider"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="255"
+                        Minimum="10"
+                        ValueChanged="SpeedSlider_ValueChanged" />
+                <Label  x:Name="SpeedText"
+                        Text="0" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Яркость" />
+                <Slider x:Name="BrightnessSlider"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="255"
+                        Minimum="10"
+                        ValueChanged="BrightnessSlider_ValueChanged" />
+                <Label  x:Name="BrightnessText"
+                        Text="0" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

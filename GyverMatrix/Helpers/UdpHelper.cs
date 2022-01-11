@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GyverMatrix.Helpers {
     internal class UdpHelper : IDisposable {
         private readonly UdpClient _udpClient = new UdpClient();
-<<<<<<< HEAD
+
         public UdpHelper()
         {
 
@@ -41,18 +41,10 @@ namespace GyverMatrix.Helpers {
             string message = Encoding.UTF8.GetString(data);
                 return message;
 
-=======
-        public void Connect(string ipAdress, int port) =>
-            _udpClient.Connect(ipAdress, port);
-        public async Task Send(string message) {
-            var data = Encoding.UTF8.GetBytes(message);
-            await _udpClient.SendAsync(data, data.Length);
+
+
         }
-        public async Task<string> Receive() {
-            var data = await _udpClient.ReceiveAsync();
-            return Encoding.UTF8.GetString(data.Buffer);
->>>>>>> 3ea1919df69cff8c103df92a996af5af0362ea07
-        }
+       
         //IPEndPoint ip = null;
 
         //byte[] data = client.Receive(ref ip);

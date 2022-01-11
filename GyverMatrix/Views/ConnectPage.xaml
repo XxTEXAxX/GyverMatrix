@@ -18,12 +18,8 @@
                     Clicked="ConnectButton_OnClicked" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="Подключаться при запуске"/>
-<<<<<<< HEAD
-                <Switch x:Name="AutoConnectSwitch" PropertyChanged="AutoConnectSwitch_PropertyChanged" />
-=======
                 <Switch x:Name="AutoConnectSwitch"
                         PropertyChanged="AutoConnectSwitch_PropertyChanged" />
->>>>>>> 3ea1919df69cff8c103df92a996af5af0362ea07
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

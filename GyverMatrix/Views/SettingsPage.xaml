@@ -5,12 +5,6 @@
              BackgroundColor="Black"
              Title="Матрица 16x16"
              x:Class="GyverMatrix.Views.SettingsPage">
-    <ContentPage.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize"
-                    Value="18" />
-        </Style>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10"
@@ -22,7 +16,7 @@
                             HorizontalOptions="FillAndExpand"
                             Maximum="255"
                             Minimum="10"
-                            ValueChanged="BrightnessSlider_OnValueChanged"/>
+                            ValueChanged="BrightnessSlider_OnValueChanged" />
                     <Label  x:Name="BrightnessText"
                             Text="0" />
                 </StackLayout>
