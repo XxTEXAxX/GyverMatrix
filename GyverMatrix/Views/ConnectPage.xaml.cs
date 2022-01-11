@@ -8,34 +8,31 @@ namespace GyverMatrix.Views {
         public ConnectPage() =>
             InitializeComponent();
 
-
+        bool a = false;
         private void ConnectButton_OnClicked(object sender, EventArgs e)
         {
-            //using (var udpHelper = new UdpHelper())
-            //{
-
-                //udpHelper.Connect(IpAdress.Text,int.Parse(Port.Text));
-            //}
-          }
+            UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
+            a = true;
+        }
 
 
         private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
 
-
+            if (a)
+            {
                 if (AutoConnectSwitch.IsToggled)
                 {
-                    using (var udpHelper = new UdpHelper())
-                    {
-                        udpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
-                        udpHelper.Send("$4 0 255;");
-                    }
-                } else {
-                    using (var udpHelper = new UdpHelper())
-                    {
-                        udpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
-                        udpHelper.Send("$4 0 20;");
-                    }
+
+                    UdpHelper.Send("$4 0 255;");
+
                 }
+                else
+                {
+
+                    UdpHelper.Send("$4 0 20;");
+
+                }
+            }
 
             
         }
