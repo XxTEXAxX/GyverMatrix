@@ -3,14 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Подключение"
              x:Class="GyverMatrix.Views.ConnectPage">
-    <ContentPage.Content >
-        <StackLayout BackgroundColor="Black" Padding="15">
-            <Entry x:Name="IpAdress" Text="192.168.4.1" Placeholder="IpAdress"/>
-            <Entry x:Name="Port" Text="2390" Placeholder="Port"/>
-            <Button x:Name="ConnectButton" Text="Подключиться" BackgroundColor="Blue" Clicked="ConnectButton_OnClicked"/>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black"
+                     Padding="15">
+            <Entry x:Name="IpAdress"
+                   Text="192.168.4.1"
+                   Placeholder="IpAdress" />
+            <Entry x:Name="Port"
+                   Text="2390"
+                   Placeholder="Port" />
+            <Button x:Name="ConnectButton"
+                    Text="Подключиться"
+                    BackgroundColor="Blue"
+                    Clicked="ConnectButton_OnClicked" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="Подключаться при запуске"/>
-                <Switch x:Name="AutoConnectSwitch" PropertyChanged="AutoConnectSwitch_PropertyChanged"/>
+                <Switch x:Name="AutoConnectSwitch"
+                        PropertyChanged="AutoConnectSwitch_PropertyChanged" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

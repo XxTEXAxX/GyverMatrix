@@ -4,47 +4,25 @@
              BackgroundColor="Black"
              Title="О приложении"
              x:Class="GyverMatrix.Views.InfoPage">
-
-    <ContentPage.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize"
-                    Value="18" />
-        </Style>
-    </ContentPage.Resources>
-    
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout 
-                Padding="10"
-                Spacing="10">
-            
-                <Label Text="GyverMatrix (Xamarin Edition)"
-                    FontSize="Title"
-                    HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10"
+                     Spacing="10">
 
-                <StackLayout Spacing="2">
-                        <Label Text="Разработчики:"
-                        HorizontalOptions="StartAndExpand" />
-                
-                    <Label Text="Медведев Дмитрий (aka Texa)"
-                        
-                        HorizontalOptions="StartAndExpand" />
-                    
-                    <Label Text="ДИМААААССССС (Сори, не знаю твое полное имя :( )"
-                        HorizontalOptions="StartAndExpand" />
-                </StackLayout>
-                
-                <StackLayout Spacing="2">
-                    <Label Text="Версия приложения:"
-                        HorizontalOptions="StartAndExpand" />
-
-                    <Label Text="10.01.22.01"
-                        
-                        HorizontalOptions="StartAndExpand" />
-
-                </StackLayout>
-                
+            <Label Text="GyverMatrix (Xamarin Edition)"
+                   FontSize="Title"
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="Разработчики:"
+                   HorizontalOptions="StartAndExpand" />
+            <Label Text="Медведев Дмитрий (aka Texa)"
+                   HorizontalOptions="StartAndExpand" />
+            <Label Text="Дмитрий Сорокин (DIMANRUS)"
+                   HorizontalOptions="StartAndExpand" />
+            <StackLayout Spacing="2">
+                <Label Text="Версия приложения:"
+                       HorizontalOptions="StartAndExpand" />
+                <Label Text="10.01.22.01"
+                       HorizontalOptions="StartAndExpand" />
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

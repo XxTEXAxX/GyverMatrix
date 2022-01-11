@@ -8,16 +8,14 @@ namespace GyverMatrix.Views {
         public ConnectPage() =>
             InitializeComponent();
 
-        private async void ConnectButton_OnClicked(object sender, EventArgs e)
-        {
-            using (var udpHelper = new UdpHelper("852837632",45))
-            {
+        private async void ConnectButton_OnClicked(object sender, EventArgs e) {
+            using (var udpHelper = new UdpHelper()) {
+                udpHelper.Connect("3223", 34);
                 await udpHelper.Send("");
             }
         }
 
-        private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
+        private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
 
         }
     }
