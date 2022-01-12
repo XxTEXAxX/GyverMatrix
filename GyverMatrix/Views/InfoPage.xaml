@@ -20,7 +20,7 @@
             <StackLayout Spacing="2">
                 <Label Text="Версия приложения:"
                        HorizontalOptions="StartAndExpand" />
-                <Label Text="10.01.22.01"
+                <Label Text="13.01.22.01"
                        HorizontalOptions="StartAndExpand" />
             </StackLayout>
         </StackLayout>

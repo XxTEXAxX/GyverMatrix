@@ -28,7 +28,7 @@
                 <Switch x:Name="GameSwitch"
                         PropertyChanged="GameSwitch_PropertyChanged" />
             </StackLayout>
-            <AbsoluteLayout HorizontalOptions="Center">
+            <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <Rectangle Fill="Orange"
                            WidthRequest="50"
                            HeightRequest="50" 

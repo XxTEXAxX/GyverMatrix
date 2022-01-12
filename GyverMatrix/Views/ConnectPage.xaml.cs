@@ -12,6 +12,22 @@ namespace GyverMatrix.Views {
         private void ConnectButton_OnClicked(object sender, EventArgs e)
         {
             UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
+
+            //запрос настроек
+
+            UdpHelper.Send("$18 1;");
+            ParseHelper.SetSettingsAsync(UdpHelper.Receive());
+
+            //запрос эффектов
+
+            UdpHelper.Send("$18 98;");
+            ParseHelper.SetEffects(UdpHelper.Receive());
+
+            //запрос игр
+
+            UdpHelper.Send("$18 99;");
+            ParseHelper.SetGames(UdpHelper.Receive());
+
             a = true;
         }
 
