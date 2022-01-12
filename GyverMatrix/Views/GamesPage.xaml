@@ -4,21 +4,17 @@
              BackgroundColor="Black"
              Title="Игры"
              x:Class="GyverMatrix.Views.GamesPage">
-
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="FontSize"
                     Value="18" />
         </Style>
     </ContentPage.Resources>
-    
     <ContentPage.Content>
-
-        
-    
         <StackLayout Padding="10">
-            
-            <Picker x:Name="Games" Title="Игра:" HorizontalOptions="FillAndExpand">
+            <Picker x:Name="Games"
+                    Title="Игра:"
+                    HorizontalOptions="FillAndExpand">
                 <Picker.Items>
                     <x:String>Змейка</x:String>
                     <x:String>Тетрис</x:String>
@@ -27,12 +23,32 @@
                     <x:String>Арканоид</x:String>
                 </Picker.Items>
             </Picker>
-
             <StackLayout Orientation="Horizontal">
-                <Label Text="Использовать в демо-режиме"/>
-                <Switch x:Name="GameSwitch" PropertyChanged="GameSwitch_PropertyChanged"/>
+                <Label Text="Использовать в демо-режиме" />
+                <Switch x:Name="GameSwitch"
+                        PropertyChanged="GameSwitch_PropertyChanged" />
             </StackLayout>
-
+            <AbsoluteLayout HorizontalOptions="Center">
+                <Rectangle Fill="Orange"
+                           WidthRequest="50"
+                           HeightRequest="50" 
+                           Rotation="40"/>
+                <Rectangle Fill="Red"
+                           WidthRequest="50"
+                           HeightRequest="50"
+                           Rotation="40" 
+                           AbsoluteLayout.LayoutBounds="-35,40"/>
+                <Rectangle Fill="Yellow"
+                           WidthRequest="50"
+                           HeightRequest="50"
+                           Rotation="40"
+                           AbsoluteLayout.LayoutBounds="39,34" />
+                <Rectangle Fill="Green"
+                           WidthRequest="50"
+                           HeightRequest="50"
+                           Rotation="40"
+                           AbsoluteLayout.LayoutBounds="5,75"/>
+            </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
