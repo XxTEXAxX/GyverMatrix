@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Подключение"
              x:Class="GyverMatrix.Views.ConnectPage"
-             Shell.FlyoutBehavior="{Binding FlyoutBehavior, Source={x:Reference Name=Page}}"
              x:Name="Page">
     <ContentPage.Content>
         <StackLayout BackgroundColor="Black"
@@ -25,3 +24,4 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+<!--Shell.FlyoutBehavior="{Binding FlyoutBehavior, Source={x:Reference Name=Page}}"-->
