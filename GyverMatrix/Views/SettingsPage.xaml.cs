@@ -57,8 +57,9 @@ namespace GyverMatrix.Views {
             string w = await SecureStorage.GetAsync("W");
             string h = await SecureStorage.GetAsync("H");
             SettingsPageTitle.Title = "Матрица " + w + "x" + h;
-
-            BrightnessSlider.Value = int.Parse(await SecureStorage.GetAsync("BR"));
+            int result;
+            int.TryParse(await SecureStorage.GetAsync("BR"), out result);
+            BrightnessSlider.Value = result;
 
             //выставление прочих настроек из хранилища
             Curret.Text = await SecureStorage.GetAsync("PW");
