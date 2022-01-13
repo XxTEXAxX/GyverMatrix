@@ -3,12 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="Black"
              Title="Рисование"
-             x:Class="GyverMatrix.Views.PaintPage">
+             x:Class="GyverMatrix.Views.PaintPage"
+             x:Name="Page">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="10">
+            <Rectangle HeightRequest="600"
+                       WidthRequest="100"
+                       Fill="Green">
+                <Rectangle.GestureRecognizers>
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_OnPanUpdated" TouchPoints="{Binding Touch, Source={x:Reference Page}}"/>
+                </Rectangle.GestureRecognizers>
+            </Rectangle>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
