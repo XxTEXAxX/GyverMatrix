@@ -1,22 +1,36 @@
-﻿using System.Net;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GyverMatrix.Helpers {
-    internal class UdpHelper {
+    internal static class UdpHelper {
         private static readonly UdpClient UdpClient = new UdpClient();
-        public static void Connect(string ipAdress, int port) =>
-            UdpClient.Connect(ipAdress, port);
+        public static bool Connect(string ipAdress, int port) {
+            try {
+                UdpClient.Connect(ipAdress, port);
+                return true;
+            } catch {
+                return false;
+            }
+        }
         public static void CloseConnect() =>
             UdpClient.Close();
-        public static void Send(string message) {
-            var data = Encoding.UTF8.GetBytes(message);
-            UdpClient.Send(data, data.Length);
+        public static async Task<bool> Send(string message) {
+            try {
+                var data = Encoding.UTF8.GetBytes(message);
+                await UdpClient.SendAsync(data, data.Length);
+                return true;
+            } catch {
+                return false;
+            }
         }
-        public static string Receive() {
-            IPEndPoint ip = null;
-            var data = UdpClient.Receive(ref ip);
-            return Encoding.UTF8.GetString(data);
+        public static async Task<string> Receive() {
+            try {
+                var data = await UdpClient.ReceiveAsync();
+                return Encoding.UTF8.GetString(data.Buffer);
+            } catch {
+                return "";
+            }
         }
     }
 }

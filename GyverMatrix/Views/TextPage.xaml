@@ -9,7 +9,6 @@
                      Padding="8">
             <Entry x:Name="Text"
                    Placeholder="Текст бегущей строки" />
-
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand">
                 <Button x:Name="Send"
@@ -22,7 +21,6 @@
                         Text="Стоп"
                         Clicked="Stop_Clicked" />
             </StackLayout>
-
             <Picker x:Name="Color"
                     Title="Заливка:"
                     HorizontalOptions="FillAndExpand">
@@ -32,7 +30,6 @@
                     <x:String>Каждая буква своим цветом</x:String>
                 </Picker.Items>
             </Picker>
-
             <StackLayout Orientation="Horizontal">
                 <Label Text="Скорость" />
                 <Slider x:Name="SpeedSlider"

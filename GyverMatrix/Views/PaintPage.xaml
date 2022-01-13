@@ -4,19 +4,11 @@
              BackgroundColor="Black"
              Title="Рисование"
              x:Class="GyverMatrix.Views.PaintPage">
-
-    <ContentPage.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize"
-                    Value="18" />
-        </Style>
-    </ContentPage.Resources>
-    
     <ContentPage.Content>
-        <StackLayout >
+        <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

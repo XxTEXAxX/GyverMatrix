@@ -7,7 +7,6 @@
     <ContentPage.Content>
         <StackLayout Padding="10"
                      Spacing="10">
-
             <Label Text="GyverMatrix (Xamarin Edition)"
                    FontSize="Title"
                    HorizontalOptions="CenterAndExpand" />

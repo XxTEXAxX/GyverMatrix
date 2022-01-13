@@ -6,7 +6,6 @@
              x:Class="GyverMatrix.Views.EffectsPage">
     <ContentPage.Content>
         <StackLayout Padding="10">
-
             <Picker x:Name="Games"
                     Title="Эффект:"
                     HorizontalOptions="FillAndExpand">
@@ -48,7 +47,6 @@
                 <Label  x:Name="BrightnessText"
                         Text="0" />
             </StackLayout>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

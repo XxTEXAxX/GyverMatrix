@@ -4,12 +4,12 @@
              x:Name="SettingsPageTitle"
              BackgroundColor="Black"
              Title="Матрица 16x16"
-             x:Class="GyverMatrix.Views.SettingsPage">
+             x:Class="GyverMatrix.Views.SettingsPage"
+             Appearing="SettingsPage_OnAppearing">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10"
                          Spacing="10">
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Яркость" />
                     <Slider x:Name="BrightnessSlider"
@@ -20,11 +20,9 @@
                     <Label  x:Name="BrightnessText"
                             Text="0" />
                 </StackLayout>
-
                 <Label Text="Настройки режимов"
                        FontSize="Subtitle"
                        HorizontalOptions="Center" />
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Ручной"
                            VerticalOptions="Center" />
@@ -39,21 +37,18 @@
                             Text="След."
                             Clicked="Next_Clicked" />
                 </StackLayout>
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Автосмена режима"
                            VerticalOptions="Center" />
                     <Switch x:Name="AutoSwitch"
                             PropertyChanged="AutoSwitch_PropertyChanged" />
                 </StackLayout>
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Случайный порядок"
                            VerticalOptions="Center" />
                     <Switch x:Name="RandomSwitch"
                             PropertyChanged="RandomSwitch_PropertyChanged" />
                 </StackLayout>
-
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="StartAndExpand">
                     <Label Text="Время режима - "
@@ -65,7 +60,6 @@
                             Text="Установить"
                             Clicked="AutoCheck1_Clicked" />
                 </StackLayout>
-
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="StartAndExpand">
                     <Label Text="Авторежим через - "
@@ -77,11 +71,9 @@
                             Text="Установить"
                             Clicked="AutoCheck2_Clicked" />
                 </StackLayout>
-
                 <Label Text="Прочие настройки"
                        FontSize="Subtitle"
                        HorizontalOptions="Center" />
-
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="StartAndExpand">
                     <Label Text="Ограничение по току"
@@ -92,11 +84,9 @@
                             Text="Установить"
                             Clicked="AutoCheck3_Clicked" />
                 </StackLayout>
-
                 <Label Text="Настройки сети"
                        FontSize="Subtitle"
                        HorizontalOptions="Center" />
-
                 <Label Text="Настройки точки доступа"
                        VerticalOptions="Center"
                        HorizontalOptions="FillAndExpand" />
@@ -115,7 +105,6 @@
                 <Button x:Name="NetSet1"
                         Text="Установить"
                         Clicked="NetSet1_Clicked" />
-
                 <Label Text="Настройки подключения"
                        VerticalOptions="Center"
                        HorizontalOptions="FillAndExpand" />

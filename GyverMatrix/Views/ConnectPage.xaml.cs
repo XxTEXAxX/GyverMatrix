@@ -1,56 +1,44 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using GyverMatrix.Helpers;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 namespace GyverMatrix.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ConnectPage {
+    public partial class ConnectPage : INotifyPropertyChanged {
         public ConnectPage() =>
             InitializeComponent();
+        private bool _a;
+        public FlyoutBehavior FlyoutBehavior { get; private set; } = FlyoutBehavior.Disabled;
 
-        bool a = false;
-        private void ConnectButton_OnClicked(object sender, EventArgs e)
-        {
+        private async void ConnectButton_OnClicked(object sender, EventArgs e) {
             UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text));
 
             //запрос настроек
-
-            UdpHelper.Send("$18 1;");
-            ParseHelper.SetSettingsAsync(UdpHelper.Receive());
+            await UdpHelper.Send("$18 1;");
+            await ParseHelper.SetSettings(await UdpHelper.Receive());
 
             //запрос эффектов
-
-            UdpHelper.Send("$18 98;");
-            ParseHelper.SetEffects(UdpHelper.Receive());
+            await UdpHelper.Send("$18 98;");
+            await ParseHelper.SetEffects(await UdpHelper.Receive());
 
             //запрос игр
+            await UdpHelper.Send("$18 99;");
+            await ParseHelper.SetGames(await UdpHelper.Receive());
 
-            UdpHelper.Send("$18 99;");
-            ParseHelper.SetGames(UdpHelper.Receive());
-
-            a = true;
+            _a = true;
+            FlyoutBehavior = FlyoutBehavior.Flyout;
+            NotifyPropertyChanged(nameof(FlyoutBehavior));
+        }
+        private async void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
+            if (!_a)
+                return;
+            await UdpHelper.Send(AutoConnectSwitch.IsToggled ? "$4 0 255;" : "$4 0 20;");
         }
 
-
-        private void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
-
-            if (a)
-            {
-                if (AutoConnectSwitch.IsToggled)
-                {
-
-                    UdpHelper.Send("$4 0 255;");
-
-                }
-                else
-                {
-
-                    UdpHelper.Send("$4 0 20;");
-
-                }
-            }
-
-            
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "") =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

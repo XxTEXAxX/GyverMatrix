@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:GyverMatrix.Views"
        Title="GyverMatrix"
@@ -7,31 +7,31 @@
        BackgroundColor="#323232"
        x:Class="GyverMatrix.AppShell">
     <Shell.ItemTemplate>
-        <DataTemplate >
+        <DataTemplate>
             <StackLayout>
                 <Label Text="{Binding Title}"
                        TextColor="White"
                        FontSize="25"
-                       Margin="10,20,0,0"/>
+                       Margin="10,20,0,0" />
             </StackLayout>
         </DataTemplate>
     </Shell.ItemTemplate>
     <FlyoutItem Title="Подключение">
         <ShellContent ContentTemplate="{DataTemplate local:ConnectPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Настройки матрицы" >
+    <FlyoutItem Title="Настройки матрицы">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Эффекты">
         <ShellContent ContentTemplate="{DataTemplate local:EffectsPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Рисование" >
+    <FlyoutItem Title="Рисование">
         <ShellContent ContentTemplate="{DataTemplate local:PaintPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Бегущая строка" >
+    <FlyoutItem Title="Бегущая строка">
         <ShellContent ContentTemplate="{DataTemplate local:TextPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Игры" >
+    <FlyoutItem Title="Игры">
         <ShellContent ContentTemplate="{DataTemplate local:GamesPage}" />
     </FlyoutItem>
     <FlyoutItem Title="О приложении">

@@ -1,40 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xamarin.Forms.Xaml;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace GyverMatrix.Views
-{
+namespace GyverMatrix.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GamesPage : ContentPage
-    {
-
-        Dictionary<string, int> nameToGame = new Dictionary<string, int>
-        {
-            { "Змейка", 0 },
-            { "Тетрис", 1 }, 
-            { "Динозаврик", 2 }, 
-            { "Лабиринт", 3 }, 
-            { "Арканоид", 4 }, 
-        };
-        
-    public GamesPage()
-        {
-
+    public partial class GamesPage {
+        //Dictionary<string, int> nameToGame = new Dictionary<string, int>
+        //{
+        //    { "Змейка", 0 },
+        //    { "Тетрис", 1 },
+        //    { "Динозаврик", 2 },
+        //    { "Лабиринт", 3 },
+        //    { "Арканоид", 4 },
+        //};
+        public GamesPage() {
             //foreach (string gameName in nameToGame.Keys)
             //{
             //    Games.Items.Add(gameName);
             //}
-
             InitializeComponent();
         }
-
-        private void GameSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
+        private void GameSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
 
         }
     }

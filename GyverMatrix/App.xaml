@@ -15,5 +15,9 @@
             <Setter Property="FontSize"
                     Value="20" />
         </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="CornerRadius"
+                    Value="10" />
+        </Style>
     </Application.Resources>
 </Application>
