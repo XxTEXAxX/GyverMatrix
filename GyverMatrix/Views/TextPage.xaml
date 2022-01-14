@@ -38,7 +38,8 @@
                         Minimum="10"
                         ValueChanged="SpeedSlider_ValueChanged" />
                 <Label  x:Name="SpeedText"
-                        Text="0" />
+                        Text="0" 
+                        WidthRequest="30"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Яркость" />
@@ -48,7 +49,8 @@
                         Minimum="10"
                         ValueChanged="BrightnessSlider_ValueChanged" />
                 <Label  x:Name="BrightnessText"
-                        Text="0" />
+                        Text="0" 
+                        WidthRequest="30"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
