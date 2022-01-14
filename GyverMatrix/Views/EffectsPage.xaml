@@ -13,17 +13,17 @@
                     SelectedIndexChanged="Effects_SelectedIndexChanged">
                 
             </Picker>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout x:Name="HS" Orientation="Horizontal">
                 <Label Text="Часы поверх эффекта" />
                 <Switch x:Name="HourSwitch"
                         PropertyChanged="HourSwitch_PropertyChanged" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout x:Name="ES" Orientation="Horizontal">
                 <Label Text="Использовать в демо-режиме" />
                 <Switch x:Name="EffectSwitch"
                         PropertyChanged="EffectSwitch_PropertyChanged" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout x:Name="SS" Orientation="Horizontal">
                 <Label Text="Скорость" />
                 <Slider x:Name="SpeedSlider"
                         HorizontalOptions="FillAndExpand"
@@ -35,7 +35,7 @@
                         Text="0" 
                         WidthRequest="30"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout x:Name="BS" Orientation="Horizontal">
                 <Label Text="Яркость" />
                 <Slider x:Name="BrightnessSlider"
                         HorizontalOptions="FillAndExpand"
