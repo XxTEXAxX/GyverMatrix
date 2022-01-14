@@ -22,28 +22,26 @@
                 <Switch x:Name="GameSwitch"
                         PropertyChanged="GameSwitch_PropertyChanged" />
             </StackLayout>
-            <AbsoluteLayout HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand">
-                <Rectangle Fill="Orange"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                           Rotation="40" />
+            <Grid Rotation="45"
+                  HorizontalOptions="Center"
+                  Margin="0,140,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+                <Rectangle Fill="Orange" />
                 <Rectangle Fill="Red"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                           Rotation="40"
-                           AbsoluteLayout.LayoutBounds="-35,40" />
+                           Grid.Column="1" />
                 <Rectangle Fill="Yellow"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                           Rotation="40"
-                           AbsoluteLayout.LayoutBounds="39,34" />
+                           Grid.Row="1" />
                 <Rectangle Fill="Green"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                           Rotation="40"
-                           AbsoluteLayout.LayoutBounds="5,75" />
-            </AbsoluteLayout>
+                           Grid.Row="1"
+                           Grid.Column="1" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
