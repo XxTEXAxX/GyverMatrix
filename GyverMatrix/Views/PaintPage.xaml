@@ -4,16 +4,11 @@
              BackgroundColor="Black"
              Title="Рисование"
              x:Class="GyverMatrix.Views.PaintPage"
-             x:Name="Page">
+             x:Name="Page"
+             Appearing="PaintPage_OnAppearing">
     <ContentPage.Content>
-        <StackLayout Spacing="10">
-            <Rectangle HeightRequest="600"
-                       WidthRequest="100"
-                       Fill="Green">
-                <Rectangle.GestureRecognizers>
-                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_OnPanUpdated" TouchPoints="{Binding Touch, Source={x:Reference Page}}"/>
-                </Rectangle.GestureRecognizers>
-            </Rectangle>
-        </StackLayout>
+        <ScrollView>
+            <Grid x:Name="grid" />
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
