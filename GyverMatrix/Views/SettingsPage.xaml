@@ -18,7 +18,8 @@
                             Minimum="10"
                             ValueChanged="BrightnessSlider_OnValueChanged" />
                     <Label  x:Name="BrightnessText"
-                            Text="0" />
+                            Text="0" 
+                            WidthRequest="30"/>
                 </StackLayout>
                 <Label Text="Настройки режимов"
                        FontSize="Subtitle"
@@ -55,7 +56,8 @@
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand" />
                     <Entry x:Name="AutoTime1"
-                           Placeholder="сек." />
+                           Placeholder="сек." 
+                           Keyboard="Numeric"/>
                     <Button x:Name="AutoCheck1"
                             Text="Установить"
                             Clicked="AutoCheck1_Clicked" />
@@ -66,7 +68,8 @@
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand" />
                     <Entry x:Name="AutoTime2"
-                           Placeholder="мин." />
+                           Placeholder="мин." 
+                           Keyboard="Numeric"/>
                     <Button x:Name="AutoCheck2"
                             Text="Установить"
                             Clicked="AutoCheck2_Clicked" />

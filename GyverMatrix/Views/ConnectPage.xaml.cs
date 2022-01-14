@@ -20,12 +20,16 @@ namespace GyverMatrix.Views {
             await ParseHelper.SetSettings(await UdpHelper.Receive());
 
             //запрос эффектов
-            await UdpHelper.Send("$18 98;");
+            await UdpHelper.Send("$18 99;");
             await ParseHelper.SetEffects(await UdpHelper.Receive());
 
             //запрос игр
-            await UdpHelper.Send("$18 99;");
+            await UdpHelper.Send("$18 98;");
             await ParseHelper.SetGames(await UdpHelper.Receive());
+
+            //запрос настроек сети 
+            await UdpHelper.Send("$18 9;");
+            await ParseHelper.SetSettingsNet(await UdpHelper.Receive());
 
             _a = true;
             FlyoutBehavior = FlyoutBehavior.Flyout;
@@ -34,7 +38,7 @@ namespace GyverMatrix.Views {
         private async void AutoConnectSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
             if (!_a)
                 return;
-            await UdpHelper.Send(AutoConnectSwitch.IsToggled ? "$4 0 255;" : "$4 0 20;");
+            //await UdpHelper.Send(AutoConnectSwitch.IsToggled ? "$4 0 255;" : "$4 0 20;");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
