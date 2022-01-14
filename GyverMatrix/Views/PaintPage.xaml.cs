@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,8 +9,12 @@ namespace GyverMatrix.Views {
         public PaintPage() =>
             InitializeComponent();
 
-        private void PaintPage_OnAppearing(object sender, EventArgs e) {
-            int h = 14, w = 21;
+        private async void PaintPage_OnAppearing(object sender, EventArgs e) {
+            int h = int.Parse(await SecureStorage.GetAsync("H"));
+            int w = int.Parse(await SecureStorage.GetAsync("W"));
+
+
+            /*
             for (int i = 0; i < w; i++)
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             for (int i = 0; i < h; i++)
@@ -26,6 +31,7 @@ namespace GyverMatrix.Views {
                     grid.Children.Add(btn);
                 }
             }
+            */
         }
     }
 }

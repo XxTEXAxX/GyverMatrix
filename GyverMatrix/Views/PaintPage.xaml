@@ -8,7 +8,10 @@
              Appearing="PaintPage_OnAppearing">
     <ContentPage.Content>
         <ScrollView>
-            <Grid x:Name="grid" />
+            <StackLayout x:Name="stackLayot">
+                <Grid x:Name="grid" />
+
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
