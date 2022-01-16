@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Name="SettingsPageTitle"
-             BackgroundColor="Black"
              Title="Матрица 16x16"
              x:Class="GyverMatrix.Views.SettingsPage"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Appearing="SettingsPage_OnAppearing">
     <ContentPage.Content>
         <ScrollView>
@@ -16,10 +16,10 @@
                             HorizontalOptions="FillAndExpand"
                             Maximum="255"
                             Minimum="10"
-                            ValueChanged="BrightnessSlider_OnValueChanged" />
+                            ValueChanged="BrightnessSlider_OnValueChanged"/>
                     <Label  x:Name="BrightnessText"
-                            Text="0" 
-                            WidthRequest="30"/>
+                            Text="0"
+                            WidthRequest="35" />
                 </StackLayout>
                 <Label Text="Настройки режимов"
                        FontSize="Subtitle"
@@ -56,8 +56,8 @@
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand" />
                     <Entry x:Name="AutoTime1"
-                           Placeholder="сек." 
-                           Keyboard="Numeric"/>
+                           Placeholder="сек."
+                           Keyboard="Numeric" />
                     <Button x:Name="AutoCheck1"
                             Text="Установить"
                             Clicked="AutoCheck1_Clicked" />
@@ -68,8 +68,8 @@
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand" />
                     <Entry x:Name="AutoTime2"
-                           Placeholder="мин." 
-                           Keyboard="Numeric"/>
+                           Placeholder="мин."
+                           Keyboard="Numeric" />
                     <Button x:Name="AutoCheck2"
                             Text="Установить"
                             Clicked="AutoCheck2_Clicked" />

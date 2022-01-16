@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BackgroundColor="Black"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Title="О приложении"
-             x:Class="GyverMatrix.Views.InfoPage">
+             x:Class="GyverMatrix.Views.InfoPage"
+             Appearing="InfoPage_OnAppearing">
     <ContentPage.Content>
         <StackLayout Padding="10"
                      Spacing="10">
@@ -21,6 +22,11 @@
                        HorizontalOptions="StartAndExpand" />
                 <Label Text="13.01.22.01"
                        HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout Spacing="5" Orientation="Horizontal">
+                <Label Text="Светлая"/>
+                <Switch x:Name="ThemeSwitch" Toggled="ThemeSwitch_OnToggled"/>
+                <Label Text="Тёмная" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
