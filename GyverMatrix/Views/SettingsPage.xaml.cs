@@ -79,7 +79,20 @@ namespace GyverMatrix.Views {
                 await SecureStorage.SetAsync("PW", Curret.Text);
             }
         }
-        private void NetSet1_Clicked(object sender, EventArgs e) {
+        private async void NetSet1_Clicked(object sender, EventArgs e) {
+
+            string name1 = await SecureStorage.GetAsync("AN");
+            string pass1 = await SecureStorage.GetAsync("AA");
+
+            string name2 = NameEntry1.Text;
+            string pass2 = PassEntry1.Text;
+
+            if(name1 != name2 | pass1 != pass2)
+            {
+                await UdpHelper.Send("$6 4|" + name2);
+                await UdpHelper.Send("$6 5|" + pass2);
+            }
+
 
         }
         private void NetSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {

@@ -79,7 +79,7 @@
                 <Rectangle 
                 x:Name="Box"
                 Fill="Black" 
-                BackgroundColor="white" 
+                BackgroundColor="{AppThemeBinding Light=Black, Dark=White}"
                 HorizontalOptions="FillAndExpand" 
                 HeightRequest="50">
 

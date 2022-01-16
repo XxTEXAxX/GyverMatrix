@@ -4,6 +4,9 @@
              x:Class="GyverMatrix.App"
              PageAppearing="App_OnPageAppearing">
     <Application.Resources>
+
+        
+        
         <Style TargetType="{x:Type Label}">
             <Setter Property="FontSize"
                     Value="18" />
@@ -17,12 +20,13 @@
                     Value="{AppThemeBinding Light=Black, Dark=White}" />
         </Style>
         <Style TargetType="{x:Type Entry}">
+            
             <Setter Property="FontSize"
                     Value="20" />
             <Setter Property="TextColor"
                     Value="{AppThemeBinding Light=Black, Dark=White}" />
             <Setter Property="PlaceholderColor"
-                    Value="{AppThemeBinding Light=Black, Dark=White}" />
+                    Value="{AppThemeBinding Light=Gray, Dark=DarkGray}" />
         </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="CornerRadius"
@@ -30,11 +34,21 @@
             <Setter Property="TextColor"
                     Value="{AppThemeBinding Light=Black, Dark=White}" />
             <Setter Property="BackgroundColor"
-                    Value="DarkOrange" />
+                    Value="Coral" />
         </Style>
         <Style TargetType="{x:Type Slider}">
             <Setter Property="MinimumTrackColor"
+                    Value="{AppThemeBinding Light=Black, Dark=White}" />
+            <Setter Property="MaximumTrackColor"
+                    Value="{AppThemeBinding Light=DarkGray, Dark=Gray}" />
+            <Setter Property="ThumbColor"
                     Value="Coral" />
+        </Style>
+        <Style TargetType="{x:Type Switch}">
+            <Setter Property="ThumbColor"
+                    Value="Coral" />
+            <Setter Property="OnColor"
+                    Value="LightCoral" />
         </Style>
     </Application.Resources>
 </Application>

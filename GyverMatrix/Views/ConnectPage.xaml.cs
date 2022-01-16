@@ -5,6 +5,7 @@ using GyverMatrix.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 namespace GyverMatrix.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,7 +16,7 @@ namespace GyverMatrix.Views {
         public FlyoutBehavior FlyoutBehavior { get; private set; } = FlyoutBehavior.Disabled;
 
         bool load = false;
-        private async void Connect()
+        private async Task Connect()
         {
             if (ConnectHelper.connected == false)
             {
@@ -62,7 +63,10 @@ namespace GyverMatrix.Views {
         }
 
         private async void ConnectButton_OnClicked(object sender, EventArgs e) {
-            Connect();
+            await Connect();
+
+            await SecureStorage.SetAsync("IpAdress", IpAdress.Text);
+            await SecureStorage.SetAsync("Port", Port.Text);
         }
         private async void AutoConnectSwitch_PropertyChanged(object sender, PropertyChangedEventArgs e) {
             if (load)
@@ -92,13 +96,16 @@ namespace GyverMatrix.Views {
 
             string autoconnect = await SecureStorage.GetAsync("AutoConnect");
 
-            if(autoconnect == "1")
+            IpAdress.Text = await SecureStorage.GetAsync("IpAdress");
+            Port.Text = await SecureStorage.GetAsync("Port");
+
+            if (autoconnect == "1")
             {
                 AutoConnectSwitch.IsToggled = true;
 
                 if (!ConnectHelper.connected)
                 {
-                    Connect();
+                    await Connect();
                 }
             }
             else
