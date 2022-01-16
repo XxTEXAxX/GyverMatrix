@@ -70,8 +70,14 @@ namespace GyverMatrix.Views {
         private async void AutoCheck2_Clicked(object sender, EventArgs e) {
             await SetAuto();
         }
-        private void AutoCheck3_Clicked(object sender, EventArgs e) {
+        private async void AutoCheck3_Clicked(object sender, EventArgs e) {
+            string PW = await SecureStorage.GetAsync("PW");
 
+            if (PW != Curret.Text)
+            {
+                await UdpHelper.Send("$23 0 " + Curret.Text + ";");
+                await SecureStorage.SetAsync("PW", Curret.Text);
+            }
         }
         private void NetSet1_Clicked(object sender, EventArgs e) {
 
@@ -101,7 +107,7 @@ namespace GyverMatrix.Views {
             if (Mode != await SecureStorage.GetAsync("AP"))
             {
                 await UdpHelper.Send("$16 4 " + Mode + ";");
-                await SecureStorage.SetAsync("DM", Mode);
+                await SecureStorage.SetAsync("AP", Mode);
             }
 
 
@@ -121,7 +127,7 @@ namespace GyverMatrix.Views {
             if (Mode != await SecureStorage.GetAsync("RM"))
             {
                 await UdpHelper.Send("$16 5 " + Mode + ";");
-                await SecureStorage.SetAsync("DM", Mode);
+                await SecureStorage.SetAsync("RM", Mode);
             }
         }
         private async void SettingsPage_OnAppearing(object sender, EventArgs e) {

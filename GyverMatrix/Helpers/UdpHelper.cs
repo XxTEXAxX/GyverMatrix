@@ -8,13 +8,17 @@ namespace GyverMatrix.Helpers {
         public static bool Connect(string ipAdress, int port) {
             try {
                 UdpClient.Connect(ipAdress, port);
+                ConnectHelper.connected = true;
                 return true;
             } catch {
+                ConnectHelper.connected = false;
                 return false;
             }
         }
-        public static void CloseConnect() =>
+        public static void CloseConnect() {
             UdpClient.Close();
+            ConnectHelper.connected = false;
+        }
 
         private static string text;
         private static bool x;
