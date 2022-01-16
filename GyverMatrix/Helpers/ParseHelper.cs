@@ -77,5 +77,16 @@ namespace GyverMatrix.Helpers {
                 return "ack";
             }
         }
+
+        public static async Task<string> Text(string text)
+        {
+
+
+            Console.WriteLine(text);
+            string message = text.Remove(0, 4);
+            message = message.Remove(message.Length-2, message.Length - (message.Length - 2));
+            Console.WriteLine(message);
+            return message;
+        }
     }
 }

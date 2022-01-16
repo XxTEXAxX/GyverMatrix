@@ -139,11 +139,12 @@ namespace GyverMatrix.Views
                 SS.IsVisible = true;
                 BS.IsVisible = true;
 
-                await UdpHelper.Send("$8 0 " + num + ";");
+                //await UdpHelper.Send("$8 0 " + num + ";");
                 int a = 0;
                 string message = "";
                 do
                 {
+                    await UdpHelper.Send("$8 0 " + num + ";");
                     string ack = await ParseHelper.Effects(await UdpHelper.Receive());
 
                     if (ack == "ack")

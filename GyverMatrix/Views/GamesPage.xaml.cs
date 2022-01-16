@@ -135,13 +135,26 @@ namespace GyverMatrix.Views {
 
             int num = Games.SelectedIndex;
 
-            await UdpHelper.Send("$9 0 " + num + ";");
-            string text = await UdpHelper.Receive();
+            int a = 0;
+            //string ack = "";
+            string text = "";
+
+            do {
+                await UdpHelper.Send("$9 0 " + num + ";");
+                string ack = await ParseHelper.Effects(await UdpHelper.Receive());
+
+                if (ack == "ack")
+                {
+                    a = 0;
+                }
+                else { a = 1; text = ack; Console.WriteLine(ack); }
+            }
+            while (a == 0);
             Console.WriteLine(text);
-            string SG1 = text.Split(' ',';')[1].Split('|')[3].Split(':')[1];
-            string BR1 = text.Split(' ', ';')[1].Split('|')[2].Split(':')[1];
-            string UG1 = text.Split(' ', ';')[1].Split('|')[6].Split(':')[1];
-            string GS1 = text.Split(' ', ';')[1].Split('|')[1].Split(':')[1];
+            string SG1 = text.Split('|')[3].Split(':')[1];
+            string BR1 = text.Split('|')[2].Split(':')[1];
+            string UG1 = text.Split('|')[6].Split(':')[1];
+            string GS1 = text.Split('|')[1].Split(':')[1];
             Console.WriteLine(SG1);
             Console.WriteLine(BR1);
             Console.WriteLine(UG1);
