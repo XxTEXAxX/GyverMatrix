@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BackgroundColor="Black"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Title="Бегущая строка"
              x:Class="GyverMatrix.Views.TextPage"
              Appearing="ContentPage_Appearing">
@@ -96,8 +96,8 @@
                         Minimum="10"
                         ValueChanged="SpeedSlider_ValueChanged" />
                 <Label  x:Name="SpeedText"
-                        Text="0" 
-                        WidthRequest="30"/>
+                        Text="0"
+                        WidthRequest="30" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Яркость" />
@@ -107,8 +107,8 @@
                         Minimum="10"
                         ValueChanged="BrightnessSlider_ValueChanged" />
                 <Label  x:Name="BrightnessText"
-                        Text="0" 
-                        WidthRequest="30"/>
+                        Text="0"
+                        WidthRequest="30" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

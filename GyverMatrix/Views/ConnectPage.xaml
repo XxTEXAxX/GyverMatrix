@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Подключение"
              x:Class="GyverMatrix.Views.ConnectPage"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              x:Name="Page">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Black"
-                     Padding="15">
+        <StackLayout Padding="15">
             <Entry x:Name="IpAdress"
                    Text="192.168.4.1"
                    Placeholder="IpAdress" />
@@ -14,7 +14,6 @@
                    Text="2390"
                    Placeholder="Port" />
             <Button Text="Подключиться"
-                    BackgroundColor="Blue"
                     Clicked="ConnectButton_OnClicked" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="Подключаться при запуске" />

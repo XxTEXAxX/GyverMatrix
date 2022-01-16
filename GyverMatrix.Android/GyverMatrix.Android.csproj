@@ -36,8 +36,7 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
-    <AndroidSupportedAbis>
-    </AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86_64</AndroidSupportedAbis>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
     <MandroidI18n />
   </PropertyGroup>
