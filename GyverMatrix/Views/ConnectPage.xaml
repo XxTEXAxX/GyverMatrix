@@ -4,10 +4,9 @@
              Title="Подключение"
              x:Class="GyverMatrix.Views.ConnectPage"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             Shell.FlyoutBehavior="{Binding FlyoutBehavior, Source={x:Reference Name=Page}}"
              x:Name="Page"
              Appearing="Page_Appearing">
-    
-        
     <ContentPage.Content>
         <StackLayout Padding="15">
             <Entry x:Name="IpAdress"
@@ -28,4 +27,3 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-<!--Shell.FlyoutBehavior="{Binding FlyoutBehavior, Source={x:Reference Name=Page}}"-->

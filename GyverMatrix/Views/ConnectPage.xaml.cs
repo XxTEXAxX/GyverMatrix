@@ -12,18 +12,14 @@ namespace GyverMatrix.Views {
     public partial class ConnectPage : INotifyPropertyChanged {
         public ConnectPage() =>
             InitializeComponent();
-        private bool _a;
         public FlyoutBehavior FlyoutBehavior { get; private set; } = FlyoutBehavior.Disabled;
 
-        bool load = false;
-        private async Task Connect()
-        {
-            if (ConnectHelper.connected == false)
-            {
+        bool _load;
+        private async Task Connect() {
+            if (!ConnectHelper.connected) {
                 ButCon.BackgroundColor = Color.DarkOrange;
                 ButCon.Text = "Подключение...";
-                if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text)))
-                {
+                if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text))) {
 
                     //запрос настроек
                     await UdpHelper.Send("$18 1;");
@@ -43,77 +39,56 @@ namespace GyverMatrix.Views {
 
                     ButCon.BackgroundColor = Color.Green;
                     ButCon.Text = "Подключено";
-                }
-                else
-                {
+                } else {
                     ButCon.BackgroundColor = Color.Red;
                     ButCon.Text = "Не подключено";
                 }
-            }
-            else if (ConnectHelper.connected == true)
-            {
+            } else {
                 ButCon.BackgroundColor = Color.Blue;
                 ButCon.Text = "Подключить";
                 UdpHelper.CloseConnect();
-
             }
-            _a = true;
             FlyoutBehavior = FlyoutBehavior.Flyout;
             NotifyPropertyChanged(nameof(FlyoutBehavior));
         }
 
         private async void ConnectButton_OnClicked(object sender, EventArgs e) {
             await Connect();
-
             await SecureStorage.SetAsync("IpAdress", IpAdress.Text);
             await SecureStorage.SetAsync("Port", Port.Text);
         }
         private async void AutoConnectSwitch_PropertyChanged(object sender, PropertyChangedEventArgs e) {
-            if (load)
-            {
-                if (AutoConnectSwitch.IsToggled)
-                {
-                    await SecureStorage.SetAsync("AutoConnect", "1");
-                }
-                else
-                {
-                    await SecureStorage.SetAsync("AutoConnect", "0");
-                }
+            if (!_load)
+                return;
+            if (AutoConnectSwitch.IsToggled) {
+                await SecureStorage.SetAsync("AutoConnect", "1");
+            } else {
+                await SecureStorage.SetAsync("AutoConnect", "0");
             }
-
-            //if (!_a)
-            //    return;
-            //await UdpHelper.Send(AutoConnectSwitch.IsToggled ? "$4 0 255;" : "$4 0 20;");
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "") =>
+        public new event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "") =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        private async void Page_Appearing(object sender, EventArgs e)
-        {
-            load = false;
+        private async void Page_Appearing(object sender, EventArgs e) {
+            _load = false;
 
             string autoconnect = await SecureStorage.GetAsync("AutoConnect");
 
             IpAdress.Text = await SecureStorage.GetAsync("IpAdress");
             Port.Text = await SecureStorage.GetAsync("Port");
 
-            if (autoconnect == "1")
-            {
+            if (autoconnect == "1") {
                 AutoConnectSwitch.IsToggled = true;
-
-                if (!ConnectHelper.connected)
-                {
+                if (!ConnectHelper.connected) {
                     await Connect();
                 }
-            }
-            else
-            {
+            } else {
                 AutoConnectSwitch.IsToggled = false;
             }
-
-            load = true;
+            _load = true;
         }
     }
 }

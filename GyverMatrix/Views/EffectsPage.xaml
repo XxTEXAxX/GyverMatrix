@@ -11,7 +11,6 @@
                     Title="Эффект:"
                     HorizontalOptions="FillAndExpand"
                     SelectedIndexChanged="Effects_SelectedIndexChanged">
-                
             </Picker>
             <StackLayout x:Name="HS" Orientation="Horizontal">
                 <Label Text="Часы поверх эффекта" />
@@ -29,8 +28,7 @@
                         HorizontalOptions="FillAndExpand"
                         Maximum="255"
                         Minimum="10"
-                        ValueChanged="SpeedSlider_ValueChanged"
-                        />
+                        ValueChanged="SpeedSlider_ValueChanged"/>
                 <Label  x:Name="SpeedText"
                         Text="0" 
                         WidthRequest="30"/>

@@ -5,7 +5,8 @@
        Title="GyverMatrix"
        FlyoutBackgroundColor="{AppThemeBinding Light=LightGray, Dark=#323232}"
        BackgroundColor="{AppThemeBinding Light=LightGray, Dark=#323232}"
-       x:Class="GyverMatrix.AppShell">
+       x:Class="GyverMatrix.AppShell"
+       Shell.TitleColor="{AppThemeBinding Light=Black, Dark = White}">
     <Shell.ItemTemplate>
         <DataTemplate>
             <StackLayout>

@@ -12,17 +12,15 @@
                    Placeholder="Текст бегущей строки" />
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand">
-                <Button x:Name="Send"
-                        Text="Отправить"
+                <Button Text="Отправить"
                         Clicked="Send_Clicked" />
-                <Button x:Name="Start"
-                        Text="Пуск"
+                <Button Text="Пуск"
                         Clicked="Start_Clicked" />
-                <Button x:Name="Stop"
-                        Text="Стоп"
+                <Button Text="Стоп"
                         Clicked="Stop_Clicked" />
             </StackLayout>
-            <StackLayout x:Name="TS" Orientation="Horizontal">
+            <StackLayout x:Name="Ts"
+                         Orientation="Horizontal">
                 <Label Text="Использовать в демо-режиме" />
                 <Switch x:Name="DemoSwitch"
                         PropertyChanged="DemoSwitch_PropertyChanged" />
@@ -37,58 +35,45 @@
                     <x:String>Каждая буква своим цветом</x:String>
                 </Picker.Items>
             </Picker>
-
             <StackLayout x:Name="ColorPicker">
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="R" />
-                    <Slider x:Name="RedSlider"
-                        HorizontalOptions="FillAndExpand"
-                        Maximum="255"
-                        Minimum="0"
-                        ValueChanged="RedSlider_ValueChanged" />
+                    <Slider HorizontalOptions="FillAndExpand"
+                            Maximum="255"
+                            Minimum="0"
+                            ValueChanged="RedSlider_ValueChanged" />
                     <Label  x:Name="RedText"
-                        Text="0" 
-                        WidthRequest="30"/>
+                            Text="0"
+                            WidthRequest="30" />
                 </StackLayout>
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="G" />
-                    <Slider x:Name="GreenSlider"
-                        HorizontalOptions="FillAndExpand"
-                        Maximum="255"
-                        Minimum="0"
-                        ValueChanged="GreenSlider_ValueChanged" />
+                    <Slider HorizontalOptions="FillAndExpand"
+                            Maximum="255"
+                            Minimum="0"
+                            ValueChanged="GreenSlider_ValueChanged" />
                     <Label  x:Name="GreenText"
-                        Text="0" 
-                        WidthRequest="30"/>
+                            Text="0"
+                            WidthRequest="30" />
                 </StackLayout>
-
                 <StackLayout Orientation="Horizontal">
                     <Label Text="B" />
-                    <Slider x:Name="BlueSlider"
-                        HorizontalOptions="FillAndExpand"
-                        Maximum="255"
-                        Minimum="0"
-                        ValueChanged="BlueSlider_ValueChanged" />
+                    <Slider HorizontalOptions="FillAndExpand"
+                            Maximum="255"
+                            Minimum="0"
+                            ValueChanged="BlueSlider_ValueChanged" />
                     <Label  x:Name="BlueText"
-                        Text="0" 
-                        WidthRequest="30"/>
+                            Text="0"
+                            WidthRequest="30" />
                 </StackLayout>
-
-                <Rectangle 
-                x:Name="Box"
-                Fill="Black" 
-                BackgroundColor="{AppThemeBinding Light=Black, Dark=White}"
-                HorizontalOptions="FillAndExpand" 
-                HeightRequest="50">
-
+                <Rectangle x:Name="Box"
+                           Fill="Black"
+                           BackgroundColor="{AppThemeBinding Light=Black, Dark=White}"
+                           HorizontalOptions="FillAndExpand"
+                           HeightRequest="50">
                 </Rectangle>
             </StackLayout>
-
-            
-
-                <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Скорость" />
                 <Slider x:Name="SpeedSlider"
                         HorizontalOptions="FillAndExpand"

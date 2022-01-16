@@ -17,44 +17,30 @@ namespace GyverMatrix.Views {
             await SecureStorage.SetAsync("BR", ((int)BrightnessSlider.Value).ToString());
         }
 
-        private async Task SetAuto()
-        {
+        private async Task SetAuto() {
             string PD = await SecureStorage.GetAsync("PD");
             string IT = await SecureStorage.GetAsync("IT");
             Console.WriteLine("установка таймеров");
-            if (PD != AutoTime1.Text | IT != AutoTime2.Text)
-            {
+            if (PD != AutoTime1.Text | IT != AutoTime2.Text) {
                 await UdpHelper.Send("$17 " + int.Parse(AutoTime1.Text) + " " + int.Parse(AutoTime2.Text) + ";");
                 Console.WriteLine("$17 " + int.Parse(AutoTime1.Text) + " " + int.Parse(AutoTime2.Text) + ";");
-            }
-            else { Console.WriteLine("не выполнено"); }
+            } else { Console.WriteLine("не выполнено"); }
         }
 
         private async void DemoSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
+            var mode = DemoSwitch.IsToggled ? "1" : "0";
 
-            string Mode;
-
-            if (DemoSwitch.IsToggled)
-            {
-                Mode = "1";
-            }
-            else
-            {
-                Mode = "0";
-            }
-
-            if (Mode != await SecureStorage.GetAsync("DM"))
-            {
-                if (Mode == "0")
-                {
+            if (mode == await SecureStorage.GetAsync("DM"))
+                return;
+            switch (mode) {
+                case "0":
                     await UdpHelper.Send("$16 1;");
-                    await SecureStorage.SetAsync("DM", Mode);
-                }
-                else if (Mode == "1")
-                {
+                    await SecureStorage.SetAsync("DM", mode);
+                    break;
+                case "1":
                     await UdpHelper.Send("$16 0;");
-                    await SecureStorage.SetAsync("DM", Mode);
-                }
+                    await SecureStorage.SetAsync("DM", mode);
+                    break;
             }
 
         }
@@ -73,11 +59,10 @@ namespace GyverMatrix.Views {
         private async void AutoCheck3_Clicked(object sender, EventArgs e) {
             string PW = await SecureStorage.GetAsync("PW");
 
-            if (PW != Curret.Text)
-            {
-                await UdpHelper.Send("$23 0 " + Curret.Text + ";");
-                await SecureStorage.SetAsync("PW", Curret.Text);
-            }
+            if (PW == Curret.Text)
+                return;
+            await UdpHelper.Send("$23 0 " + Curret.Text + ";");
+            await SecureStorage.SetAsync("PW", Curret.Text);
         }
         private async void NetSet1_Clicked(object sender, EventArgs e) {
 
@@ -87,11 +72,10 @@ namespace GyverMatrix.Views {
             string name2 = NameEntry1.Text;
             string pass2 = PassEntry1.Text;
 
-            if(name1 != name2 | pass1 != pass2)
-            {
-                await UdpHelper.Send("$6 4|" + name2);
-                await UdpHelper.Send("$6 5|" + pass2);
-            }
+            if (!(name1 != name2 | pass1 != pass2))
+                return;
+            await UdpHelper.Send("$6 4|" + name2);
+            await UdpHelper.Send("$6 5|" + pass2);
 
 
         }
@@ -106,42 +90,24 @@ namespace GyverMatrix.Views {
             await SetBrightnesstAsync();
         }
         private async void AutoSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
-            string Mode;
+            string mode;
 
-            if (AutoSwitch.IsToggled)
-            {
-                Mode = "1";
-            }
-            else
-            {
-                Mode = "0";
-            }
+            mode = AutoSwitch.IsToggled ? "1" : "0";
 
-            if (Mode != await SecureStorage.GetAsync("AP"))
-            {
-                await UdpHelper.Send("$16 4 " + Mode + ";");
-                await SecureStorage.SetAsync("AP", Mode);
-            }
+            if (mode == await SecureStorage.GetAsync("AP"))
+                return;
+            await UdpHelper.Send("$16 4 " + mode + ";");
+            await SecureStorage.SetAsync("AP", mode);
 
 
         }
         private async void RandomSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
-            string Mode;
+            var mode = RandomSwitch.IsToggled ? "1" : "0";
 
-            if (RandomSwitch.IsToggled)
-            {
-                Mode = "1";
-            }
-            else
-            {
-                Mode = "0";
-            }
-
-            if (Mode != await SecureStorage.GetAsync("RM"))
-            {
-                await UdpHelper.Send("$16 5 " + Mode + ";");
-                await SecureStorage.SetAsync("RM", Mode);
-            }
+            if (mode == await SecureStorage.GetAsync("RM"))
+                return;
+            await UdpHelper.Send("$16 5 " + mode + ";");
+            await SecureStorage.SetAsync("RM", mode);
         }
         private async void SettingsPage_OnAppearing(object sender, EventArgs e) {
             //выставление настроек яркости из хранилища
@@ -149,8 +115,7 @@ namespace GyverMatrix.Views {
             string w = await SecureStorage.GetAsync("W");
             string h = await SecureStorage.GetAsync("H");
             SettingsPageTitle.Title = "Матрица " + w + "x" + h;
-            int result;
-            int.TryParse(await SecureStorage.GetAsync("BR"), out result);
+            int.TryParse(await SecureStorage.GetAsync("BR"), out var result);
             BrightnessSlider.Value = result;
 
             //выставление прочих настроек из хранилища
@@ -165,9 +130,9 @@ namespace GyverMatrix.Views {
             string PD = await SecureStorage.GetAsync("PD"); // PD:число    продолжительность режима в секундах
             string IT = await SecureStorage.GetAsync("IT"); // IT:число    время бездействия в секундах
 
-            if (DM == "1") { DemoSwitch.IsToggled = true; } else { DemoSwitch.IsToggled = false; }
-            if (AP == "1") { AutoSwitch.IsToggled = true; } else { AutoSwitch.IsToggled = false; }
-            if (RM == "1") { RandomSwitch.IsToggled = true; } else { RandomSwitch.IsToggled = false; }
+            DemoSwitch.IsToggled = DM == "1";
+            AutoSwitch.IsToggled = AP == "1";
+            RandomSwitch.IsToggled = RM == "1";
             AutoTime1.Text = PD;
             AutoTime2.Text = IT;
 
@@ -176,8 +141,8 @@ namespace GyverMatrix.Views {
             NameEntry1.Text = await SecureStorage.GetAsync("AN");
             PassEntry1.Text = await SecureStorage.GetAsync("AA");
 
-            string AU = await SecureStorage.GetAsync("AU"); 
-            if (AU == "1") { NetSwitch.IsToggled = true; } else { NetSwitch.IsToggled = false; }
+            string AU = await SecureStorage.GetAsync("AU");
+            NetSwitch.IsToggled = AU == "1";
 
             NameEntry2.Text = await SecureStorage.GetAsync("NW");
             PassEntry2.Text = await SecureStorage.GetAsync("NA");

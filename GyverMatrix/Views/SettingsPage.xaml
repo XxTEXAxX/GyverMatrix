@@ -16,7 +16,7 @@
                             HorizontalOptions="FillAndExpand"
                             Maximum="255"
                             Minimum="10"
-                            ValueChanged="BrightnessSlider_OnValueChanged"/>
+                            ValueChanged="BrightnessSlider_OnValueChanged" />
                     <Label  x:Name="BrightnessText"
                             Text="0"
                             WidthRequest="35" />
@@ -58,8 +58,7 @@
                     <Entry x:Name="AutoTime1"
                            Placeholder="сек."
                            Keyboard="Numeric" />
-                    <Button x:Name="AutoCheck1"
-                            Text="Установить"
+                    <Button Text="Установить"
                             Clicked="AutoCheck1_Clicked" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal"
@@ -105,8 +104,7 @@
                     <Switch x:Name="NetSwitch"
                             PropertyChanged="NetSwitch_PropertyChanged" />
                 </StackLayout>
-                <Button x:Name="NetSet1"
-                        Text="Установить"
+                <Button Text="Установить"
                         Clicked="NetSet1_Clicked" />
                 <Label Text="Настройки подключения"
                        VerticalOptions="Center"
@@ -117,8 +115,7 @@
                        Placeholder="Пароль сети" />
                 <Entry x:Name="IpEntry2"
                        Placeholder="Локальный IP-адресс в сети" />
-                <Button x:Name="NetSet2"
-                        Text="Установить"
+                <Button Text="Установить"
                         Clicked="NetSet2_Clicked" />
             </StackLayout>
         </ScrollView>

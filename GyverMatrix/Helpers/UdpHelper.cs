@@ -20,31 +20,23 @@ namespace GyverMatrix.Helpers {
             ConnectHelper.connected = false;
         }
 
-        private static string text;
-        private static bool x;
+        private static string _text;
+        private static bool _x;
         public static async Task<bool> Send(string message) {
             try {
                 var data = Encoding.UTF8.GetBytes(message);
                 await UdpClient.SendAsync(data, data.Length);
-                x = true;
+                var data2 = await UdpClient.ReceiveAsync();
+                _text = Encoding.UTF8.GetString(data2.Buffer);
+                _x = true;
             } catch {
-                x = false;
+                _text = "";
+                _x = false;
             }
-
-            try
-            {
-                var data = await UdpClient.ReceiveAsync();
-                text =  Encoding.UTF8.GetString(data.Buffer);
-            }
-            catch
-            {
-                text =  "";
-            }
-
-            return x;
+            return _x;
         }
-        public static async Task<string> Receive() {
-            return text;
+        public static Task<string> Receive() {
+            return Task.FromResult(_text);
         }
     }
 }

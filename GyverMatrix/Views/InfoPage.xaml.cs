@@ -14,8 +14,7 @@ namespace GyverMatrix.Views {
             await SecureStorage.SetAsync("Theme", ThemeSwitch.IsToggled ? "Dark" : "Light");
         }
 
-        private async void InfoPage_OnAppearing(object sender, EventArgs e) {
+        private async void InfoPage_OnAppearing(object sender, EventArgs e) =>
             ThemeSwitch.IsToggled = await SecureStorage.GetAsync("Theme") == "Dark";
-        }
     }
 }

@@ -63,22 +63,18 @@
                         <TapGestureRecognizer Tapped="TapGestureRecognizer0_Tapped"/>
                     </Rectangle.GestureRecognizers>
                 </Rectangle>
-
-
                 <Rectangle Fill="Red"
                            Grid.Column="1" >
                     <Rectangle.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer1_Tapped"/>
                     </Rectangle.GestureRecognizers>
                 </Rectangle>
-
                 <Rectangle Fill="Yellow"
                            Grid.Row="1" >
                     <Rectangle.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer2_Tapped"/>
                     </Rectangle.GestureRecognizers>
                 </Rectangle>
-
                 <Rectangle Fill="Green"
                            Grid.Row="1"
                            Grid.Column="1" >

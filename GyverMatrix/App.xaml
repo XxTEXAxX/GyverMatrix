@@ -4,9 +4,6 @@
              x:Class="GyverMatrix.App"
              PageAppearing="App_OnPageAppearing">
     <Application.Resources>
-
-        
-        
         <Style TargetType="{x:Type Label}">
             <Setter Property="FontSize"
                     Value="18" />

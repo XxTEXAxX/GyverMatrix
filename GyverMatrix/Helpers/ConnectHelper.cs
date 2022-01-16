@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GyverMatrix.Helpers
+﻿namespace GyverMatrix.Helpers
 {
     internal static class ConnectHelper
     {
