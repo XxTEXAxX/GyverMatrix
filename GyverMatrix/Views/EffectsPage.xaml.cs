@@ -46,10 +46,9 @@ namespace GyverMatrix.Views {
             }
         }
         private async void HourSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) {
-            string mode;
             int num = Effects.SelectedIndex;
 
-            mode = HourSwitch.IsToggled ? "1" : "0";
+            var mode = HourSwitch.IsToggled ? "1" : "0";
 
             if (mode == await SecureStorage.GetAsync("HSW" + num))
                 return;

@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 
 namespace GyverMatrix.Helpers {
     internal static class UdpHelper {
-        private static readonly UdpClient UdpClient = new UdpClient();
+        private static UdpClient UdpClient = new UdpClient();
+        public static string Ip;
+        public static int Port;
         public static bool Connect(string ipAdress, int port) {
             try {
                 UdpClient.Connect(ipAdress, port);
@@ -20,6 +22,15 @@ namespace GyverMatrix.Helpers {
             ConnectHelper.connected = false;
         }
 
+        public static bool Reconnect() {
+            try {
+                UdpClient.Dispose();
+                UdpClient = new UdpClient();
+                return Connect(Ip, Port);
+            } catch {
+                return false;
+            }
+        }
         private static string _text;
         private static bool _x;
         public static async Task<bool> Send(string message) {
