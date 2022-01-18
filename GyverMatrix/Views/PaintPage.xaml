@@ -2,15 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:forms="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
              Title="Рисование"
              x:Class="GyverMatrix.Views.PaintPage"
              x:Name="Page"
              Appearing="PaintPage_OnAppearing">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <Grid x:Name="grid" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"/>
-            </StackLayout>
-        </ScrollView>
+        <Grid BackgroundColor="White">
+            <skia:SKCanvasView x:Name="canvasView"
+                               PaintSurface="canvasView_PaintSurface" />
+            <Grid.Effects>
+                <forms:TouchEffect Capture="True"
+                                TouchAction="TouchEffect_TouchAction" />
+            </Grid.Effects>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
+<!--<Grid x:Name="grid" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"/>-->
