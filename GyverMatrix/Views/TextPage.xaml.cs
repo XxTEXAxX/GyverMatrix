@@ -79,7 +79,7 @@ namespace GyverMatrix.Views {
 
             await UdpHelper.Send("$7 1;");
             await UdpHelper.Send("$18 4;");
-            string text = await ParseHelper.Text(await UdpHelper.Receive());
+            string text = ParseHelper.Text(await UdpHelper.Receive());
             string[] settings = text.Split('|');
 
             string demo = settings[4].Split(':')[1];

@@ -8,13 +8,40 @@
              x:Name="Page"
              Appearing="PaintPage_OnAppearing">
     <ContentPage.Content>
-        <Grid BackgroundColor="Black"
-              x:Name="CustomGrid"
-              HorizontalOptions="CenterAndExpand">
-            <Grid.Effects>
-                <forms:TouchEffect Capture="True"
-                                   TouchAction="TouchEffect_TouchAction" />
-            </Grid.Effects>
-        </Grid>
+        <StackLayout>
+            <Grid x:Name="CustomGrid"
+                  BackgroundColor="Black"
+                  VerticalOptions="Start"
+                  ColumnSpacing="0"
+                  RowSpacing="0"
+                  Padding="10"
+                  HorizontalOptions="Center">
+                <Grid.Effects>
+                    <forms:TouchEffect Capture="True"
+                                       TouchAction="TouchEffect_TouchAction" />
+                </Grid.Effects>
+            </Grid>
+            <StackLayout Orientation="Horizontal"
+                         Margin="10"
+                         Spacing="5"
+                         HorizontalOptions="Center">
+                <ImageButton HeightRequest="50"
+                             Source="brush"
+                             BackgroundColor="DarkGreen"
+                             Padding="5" />
+                <ImageButton HeightRequest="50"
+                             Source="bucket"
+                             BackgroundColor="Transparent"
+                             Padding="5" />
+                <ImageButton HeightRequest="50"
+                             Source="erase"
+                             Padding="5"
+                             BackgroundColor="Transparent" />
+                <ImageButton HeightRequest="50"
+                             Source="clear"
+                             Padding="5"
+                             BackgroundColor="Transparent" />
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

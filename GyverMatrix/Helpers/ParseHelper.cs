@@ -60,12 +60,17 @@ namespace GyverMatrix.Helpers {
             return Task.FromResult("ack");
         }
 
-        public static Task<string> Text(string text) {
-            Console.WriteLine(text);
-            string message = text.Remove(0, 4);
-            message = message.Remove(message.Length - 2, message.Length - (message.Length - 2));
-            Console.WriteLine(message);
-            return Task.FromResult(message);
+        public static string Text(string text) {
+            try {
+                Console.WriteLine(text);
+                string message = text.Remove(0, 4);
+                message = message.Remove(message.Length - 2, message.Length - (message.Length - 2));
+                Console.WriteLine(message);
+                return message;
+            } catch {
+                // ignored
+                return string.Empty;
+            }
         }
     }
 }
