@@ -78,7 +78,8 @@
                             <Slider x:Name="BrightnessSlider"
                                     HorizontalOptions="FillAndExpand"
                                     Maximum="255"
-                                    Minimum="10" />
+                                    Minimum="10" 
+                                    ValueChanged="BrightnessSlider_ValueChanged"/>
                             <Label  x:Name="BrightnessText"
                                     Text="0"
                                     WidthRequest="35" />
