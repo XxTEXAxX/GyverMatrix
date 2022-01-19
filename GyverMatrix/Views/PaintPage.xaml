@@ -26,21 +26,27 @@
                          Spacing="5"
                          HorizontalOptions="Center">
                 <ImageButton HeightRequest="50"
+                             x:Name="Brush"
                              Source="brush"
                              BackgroundColor="DarkGreen"
-                             Padding="5" />
+                             Padding="5"
+                             Clicked="Brush_Clicked" />
                 <ImageButton HeightRequest="50"
                              Source="bucket"
                              BackgroundColor="Transparent"
-                             Padding="5" />
+                             Padding="5"
+                             Clicked="Bucket_Clicked" />
                 <ImageButton HeightRequest="50"
                              Source="erase"
+                             x:Name="Erase"
                              Padding="5"
-                             BackgroundColor="Transparent" />
+                             BackgroundColor="Transparent"
+                             Clicked="Erase_Clicked" />
                 <ImageButton HeightRequest="50"
                              Source="clear"
                              Padding="5"
-                             BackgroundColor="Transparent" />
+                             BackgroundColor="Transparent"
+                             Clicked="Clear_Clicked" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
