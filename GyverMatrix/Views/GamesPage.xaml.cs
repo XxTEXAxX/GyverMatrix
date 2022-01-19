@@ -78,6 +78,7 @@ namespace GyverMatrix.Views {
             DS.IsVisible = false;
             SS.IsVisible = false;
             BS.IsVisible = false;
+            Grid.IsVisible = false;
         }
 
         private async void Games_SelectedIndexChanged(object sender, EventArgs e) {
@@ -86,6 +87,7 @@ namespace GyverMatrix.Views {
             DS.IsVisible = true;
             SS.IsVisible = true;
             BS.IsVisible = true;
+            Grid.IsVisible = true;
             //Дим, это штука адаптирует размеры кнопок под размеры экрана
             double x = stackLayot.Width;
 
