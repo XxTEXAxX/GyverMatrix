@@ -62,14 +62,17 @@ namespace GyverMatrix.Helpers {
 
         public static string Text(string text) {
             try {
-                Console.WriteLine(text);
-                string message = text.Remove(0, 4);
-                message = message.Remove(message.Length - 2, message.Length - (message.Length - 2));
-                Console.WriteLine(message);
-                return message;
+                if (text != "") {
+                    Console.WriteLine(text);
+                    string message = text.Remove(0, 4);
+                    message = message.Remove(message.Length - 2, message.Length - (message.Length - 2));
+                    Console.WriteLine(message);
+                    return message;
+                }
+                return text;
             } catch {
                 // ignored
-                return string.Empty;
+                return text;
             }
         }
     }

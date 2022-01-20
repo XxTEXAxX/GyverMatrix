@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Title="Бегущая строка"
              x:Class="GyverMatrix.Views.TextPage"
@@ -36,7 +37,7 @@
                 </Picker.Items>
             </Picker>
             <StackLayout x:Name="ColorPicker">
-                <StackLayout Orientation="Horizontal">
+                <!--<StackLayout Orientation="Horizontal">
                     <Label Text="R" />
                     <Slider HorizontalOptions="FillAndExpand"
                             Maximum="255"
@@ -65,7 +66,9 @@
                     <Label  x:Name="BlueText"
                             Text="0"
                             WidthRequest="30" />
-                </StackLayout>
+                </StackLayout>-->
+                <colorPicker:ColorTriangle Margin="40,20,40,10"
+                                           SelectedColorChanged="ColorTriangle_SelectedColorChanged" />
                 <Rectangle x:Name="Box"
                            Fill="Black"
                            BackgroundColor="{AppThemeBinding Light=Black, Dark=White}"

@@ -1,6 +1,7 @@
 ﻿using GyverMatrix.Helpers;
 using System;
 using System.Threading.Tasks;
+using ColorPicker;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,13 +23,6 @@ namespace GyverMatrix.Views {
             await SecureStorage.SetAsync("BR", ((int)BrightnessSlider.Value).ToString());
         }
 
-        private async Task ColorChanged() {
-            Box.Fill = Color.FromRgb(_red, _green, _blue);
-            string col = Color.FromRgb(_red, _green, _blue).ToHex().Remove(0, 3);
-            await UdpHelper.Send("$0 " + col + ";");
-            Console.WriteLine(col);
-
-        }
         private async Task SetSpeedAsync() {
             await UdpHelper.Send("$15 " + (int)SpeedSlider.Value + " 1;");
         }
@@ -55,23 +49,6 @@ namespace GyverMatrix.Views {
             await SetBrightnesstAsync();
         }
 
-        private async void BlueSlider_ValueChanged(object sender, ValueChangedEventArgs e) {
-            BlueText.Text = ((int)((Slider)sender).Value).ToString();
-            _blue = (int)((Slider)sender).Value;
-            await ColorChanged();
-        }
-
-        private async void GreenSlider_ValueChanged(object sender, ValueChangedEventArgs e) {
-            GreenText.Text = ((int)((Slider)sender).Value).ToString();
-            _green = (int)((Slider)sender).Value;
-            await ColorChanged();
-        }
-
-        private async void RedSlider_ValueChanged(object sender, ValueChangedEventArgs e) {
-            RedText.Text = ((int)((Slider)sender).Value).ToString();
-            _red = (int)((Slider)sender).Value;
-            await ColorChanged();
-        }
 
         private async void ContentPage_Appearing(object sender, EventArgs e) {
 
@@ -141,6 +118,14 @@ namespace GyverMatrix.Views {
 
             ColorPicker.IsVisible = num == 0;
 
+        }
+
+        private async void ColorTriangle_SelectedColorChanged(object sender, ColorPicker.BaseClasses.ColorPickerEventArgs.ColorChangedEventArgs e) {
+            ColorTriangle colorTriangle = (ColorTriangle)sender;
+            Box.Fill = colorTriangle.SelectedColor;
+            string col = colorTriangle.SelectedColor.ToHex().Remove(0, 3);
+            await UdpHelper.Send("$0 " + col + ";");
+            Console.WriteLine(col);
         }
     }
 }
