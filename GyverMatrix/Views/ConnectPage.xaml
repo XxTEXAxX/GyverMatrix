@@ -4,7 +4,7 @@
              Title="Подключение"
              x:Class="GyverMatrix.Views.ConnectPage"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
-             Shell.FlyoutBehavior="Flyout"
+             Shell.FlyoutBehavior="{Binding FlyoutBehavior, Source={x:Reference Page}}"
              x:Name="Page"
              Appearing="Page_Appearing">
     <ContentPage.Content>
