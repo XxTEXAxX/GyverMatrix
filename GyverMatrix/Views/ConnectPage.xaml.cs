@@ -16,7 +16,7 @@ namespace GyverMatrix.Views {
 
         bool _load;
         private async Task Connect() {
-            if (!ConnectHelper.connected) {
+            if (!ConnectHelper.connected && Port.Text != "" && IpAdress.Text != "") {
                 ButCon.BackgroundColor = Color.DarkOrange;
                 ButCon.Text = "Подключение...";
                 if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text))) {
