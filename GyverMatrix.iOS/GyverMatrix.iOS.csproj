@@ -115,9 +115,25 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\brush.imageset\brush.png" />
+    <ImageAsset Include="Assets.xcassets\brush.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\bucket.imageset\bucket.png" />
+    <ImageAsset Include="Assets.xcassets\bucket.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\clear.imageset\clear.png" />
+    <ImageAsset Include="Assets.xcassets\clear.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>False</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\erase.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\erase.imageset\erase.png" />
     <ImageAsset Include="Assets.xcassets\Icon.imageset\Contents.json">
       <Visible>False</Visible>
     </ImageAsset>

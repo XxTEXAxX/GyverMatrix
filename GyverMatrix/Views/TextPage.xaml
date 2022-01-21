@@ -67,7 +67,7 @@
                             Text="0"
                             WidthRequest="30" />
                 </StackLayout>-->
-                <colorPicker:ColorTriangle Margin="40,20,40,10"
+                <colorPicker:ColorTriangle Margin="70,20,70,10"
                                            SelectedColorChanged="ColorTriangle_SelectedColorChanged" />
                 <Rectangle x:Name="Box"
                            Fill="Black"

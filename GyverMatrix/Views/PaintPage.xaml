@@ -12,7 +12,7 @@
         <StackLayout>
             <StackLayout IsVisible="False"
                          x:Name="PickerBlock">
-                <colorpicker:ColorTriangle Margin="20"
+                <colorpicker:ColorTriangle Margin="40"
                                            SelectedColorChanged="ColorTriangle_SelectedColorChanged"
                                            SelectedColor="{Binding CurrentColor, Source={x:Reference Page}}" />
                 <Button BackgroundColor="Red"

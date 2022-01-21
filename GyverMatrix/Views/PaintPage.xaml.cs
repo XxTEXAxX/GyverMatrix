@@ -42,36 +42,46 @@ namespace GyverMatrix.Views {
         int _w = 16;
 
         private async void PaintPage_OnAppearing(object sender, EventArgs e) {
+            try
+            {
+                _h = int.Parse(await SecureStorage.GetAsync("H"));
+                _w = int.Parse(await SecureStorage.GetAsync("W"));
+            }
+            catch
+            {
 
-            _h = int.Parse(await SecureStorage.GetAsync("H"));
-            _w = int.Parse(await SecureStorage.GetAsync("W"));
-
+            }
             int.TryParse(await SecureStorage.GetAsync("BR"), out var result);
-            BrightnessSlider.Value = result;
+                BrightnessSlider.Value = result;
 
-            _size = (Application.Current.MainPage.Width / _w / 1.1);
-            for (int i = 0; i < _w; i++) {
-                CustomGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(_size) });
-            }
-
-            for (int i = 0; i < _h; i++) {
-                CustomGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(_size) });
-            }
-
-            _frames = new Frame[_h, _w];
-            for (int r = 0; r < _h; r++) {
-                for (int c = 0; c < _w; c++) {
-                    Frame btn = new Frame {
-                        BorderColor = Color.DarkOrange,
-                        BackgroundColor = Color.Transparent,
-                        CornerRadius = 0
-                    };
-                    _frames[r, c] = btn;
-                    btn.SetValue(Grid.RowProperty, r);
-                    btn.SetValue(Grid.ColumnProperty, c);
-                    CustomGrid.Children.Add(btn);
+                _size = (Application.Current.MainPage.Width / _w / 1.1);
+                for (int i = 0; i < _w; i++)
+                {
+                    CustomGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(_size) });
                 }
-            }
+
+                for (int i = 0; i < _h; i++)
+                {
+                    CustomGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(_size) });
+                }
+
+                _frames = new Frame[_h, _w];
+                for (int r = 0; r < _h; r++)
+                {
+                    for (int c = 0; c < _w; c++)
+                    {
+                        Frame btn = new Frame
+                        {
+                            BorderColor = Color.DarkOrange,
+                            BackgroundColor = Color.Transparent,
+                            CornerRadius = 0
+                        };
+                        _frames[r, c] = btn;
+                        btn.SetValue(Grid.RowProperty, r);
+                        btn.SetValue(Grid.ColumnProperty, c);
+                        CustomGrid.Children.Add(btn);
+                    }
+                }
         }
 
         private async void TouchEffect_TouchAction(object sender, TouchTracking.TouchActionEventArgs args) {
