@@ -39,6 +39,8 @@
     <AndroidSupportedAbis>armeabi-v7a;x86_64</AndroidSupportedAbis>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
     <MandroidI18n />
+<AndroidHttpClientHandlerType>AndroidClientHandler</AndroidHttpClientHandlerType>
+<AndroidLinkTool></AndroidLinkTool>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +60,7 @@
     <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
+<AndroidHttpClientHandlerType>AndroidClientHandler</AndroidHttpClientHandlerType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
