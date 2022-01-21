@@ -121,9 +121,15 @@
     <ImageAsset Include="Assets.xcassets\Icon.imageset\Contents.json">
       <Visible>False</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Icon.imageset\icon-1.png" />
-    <ImageAsset Include="Assets.xcassets\Icon.imageset\icon-2.png" />
-    <ImageAsset Include="Assets.xcassets\Icon.imageset\icon.png" />
+    <ImageAsset Include="Assets.xcassets\Icon.imageset\icon-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icon.imageset\icon-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Icon.imageset\icon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
