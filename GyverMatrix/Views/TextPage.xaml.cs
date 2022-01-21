@@ -79,7 +79,7 @@ namespace GyverMatrix.Views {
             }
             if (settings[3].Split(':')[1] != "[]") {
                 string a = settings[3].Split(':')[1].Remove(0, 1);
-                a = a.Remove(a.Length - 2, a.Length - (a.Length - 2));
+                a = a.Remove(a.Length - 1, a.Length - (a.Length - 1));
 
                 Text.Text = a;
             }
