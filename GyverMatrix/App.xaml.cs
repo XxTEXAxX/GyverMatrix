@@ -1,7 +1,7 @@
 ﻿using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace GyverMatrix {
+namespace GyverMatrix { 
     public partial class App {
         public App() {
             InitializeComponent();

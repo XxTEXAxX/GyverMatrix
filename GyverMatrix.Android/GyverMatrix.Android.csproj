@@ -16,7 +16,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
@@ -39,8 +39,9 @@
     <AndroidSupportedAbis>armeabi-v7a;x86_64</AndroidSupportedAbis>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
     <MandroidI18n />
-<AndroidHttpClientHandlerType>AndroidClientHandler</AndroidHttpClientHandlerType>
-<AndroidLinkTool></AndroidLinkTool>
+    <AndroidHttpClientHandlerType>AndroidClientHandler</AndroidHttpClientHandlerType>
+    <AndroidLinkTool>
+    </AndroidLinkTool>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,15 +61,15 @@
     <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
-<AndroidHttpClientHandlerType>AndroidClientHandler</AndroidHttpClientHandlerType>
+    <AndroidHttpClientHandlerType>AndroidClientHandler</AndroidHttpClientHandlerType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
