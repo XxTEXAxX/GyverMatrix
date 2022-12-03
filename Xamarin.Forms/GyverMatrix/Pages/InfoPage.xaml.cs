@@ -3,7 +3,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GyverMatrix.Views {
+namespace GyverMatrix.Pages {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoPage {
         public InfoPage() =>

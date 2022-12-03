@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Title="О приложении"
-             x:Class="GyverMatrix.Views.InfoPage"
+             x:Class="GyverMatrix.Pages.InfoPage"
              Appearing="InfoPage_OnAppearing">
     <ContentPage.Content>
         <StackLayout Padding="10"

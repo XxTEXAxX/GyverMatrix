@@ -4,7 +4,7 @@
              xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Title="Бегущая строка"
-             x:Class="GyverMatrix.Views.TextPage"
+             x:Class="GyverMatrix.Pages.TextPage"
              Appearing="ContentPage_Appearing">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand"
@@ -37,36 +37,6 @@
                 </Picker.Items>
             </Picker>
             <StackLayout x:Name="ColorPicker">
-                <!--<StackLayout Orientation="Horizontal">
-                    <Label Text="R" />
-                    <Slider HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="0"
-                            ValueChanged="RedSlider_ValueChanged" />
-                    <Label  x:Name="RedText"
-                            Text="0"
-                            WidthRequest="30" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="G" />
-                    <Slider HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="0"
-                            ValueChanged="GreenSlider_ValueChanged" />
-                    <Label  x:Name="GreenText"
-                            Text="0"
-                            WidthRequest="30" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="B" />
-                    <Slider HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="0"
-                            ValueChanged="BlueSlider_ValueChanged" />
-                    <Label  x:Name="BlueText"
-                            Text="0"
-                            WidthRequest="30" />
-                </StackLayout>-->
                 <colorPicker:ColorTriangle Margin="70,20,70,10"
                                            SelectedColorChanged="ColorTriangle_SelectedColorChanged" />
                 <Rectangle x:Name="Box"

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Title="Игры"
-             x:Class="GyverMatrix.Views.GamesPage"
+             x:Class="GyverMatrix.Pages.GamesPage"
              Appearing="ContentPage_Appearing">
     <ContentPage.Content>
         <StackLayout x:Name="stackLayot" Padding="10">
