@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             Title="Бегущая строка"
+             x:Class="GyverMatrix.Views.TextPage"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Padding="8">
+            <Entry x:Name="Text"
+                   Placeholder="Текст бегущей строки" />
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <Button Text="Отправить"
+                        Clicked="Send_Clicked" />
+                <Button Text="Пуск"
+                        Clicked="Start_Clicked" />
+                <Button Text="Стоп"
+                        Clicked="Stop_Clicked" />
+            </StackLayout>
+            <StackLayout x:Name="Ts"
+                         Orientation="Horizontal">
+                <Label Text="Использовать в демо-режиме" />
+                <Switch x:Name="DemoSwitch"
+                        PropertyChanged="DemoSwitch_PropertyChanged" />
+            </StackLayout>
+            <Picker x:Name="Col"
+                    Title="Заливка:"
+                    HorizontalOptions="FillAndExpand"
+                    SelectedIndexChanged="Col_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Вся строка одним цветом</x:String>
+                    <x:String>Радуга вдоль текста</x:String>
+                    <x:String>Каждая буква своим цветом</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout x:Name="ColorPicker">
+                <!--<StackLayout Orientation="Horizontal">
+                    <Label Text="R" />
+                    <Slider HorizontalOptions="FillAndExpand"
+                            Maximum="255"
+                            Minimum="0"
+                            ValueChanged="RedSlider_ValueChanged" />
+                    <Label  x:Name="RedText"
+                            Text="0"
+                            WidthRequest="30" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="G" />
+                    <Slider HorizontalOptions="FillAndExpand"
+                            Maximum="255"
+                            Minimum="0"
+                            ValueChanged="GreenSlider_ValueChanged" />
+                    <Label  x:Name="GreenText"
+                            Text="0"
+                            WidthRequest="30" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="B" />
+                    <Slider HorizontalOptions="FillAndExpand"
+                            Maximum="255"
+                            Minimum="0"
+                            ValueChanged="BlueSlider_ValueChanged" />
+                    <Label  x:Name="BlueText"
+                            Text="0"
+                            WidthRequest="30" />
+                </StackLayout>-->
+                <colorPicker:ColorTriangle Margin="70,20,70,10"
+                                           SelectedColorChanged="ColorTriangle_SelectedColorChanged" />
+                <Rectangle x:Name="Box"
+                           Fill="Black"
+                           BackgroundColor="{AppThemeBinding Light=Black, Dark=White}"
+                           HorizontalOptions="FillAndExpand"
+                           HeightRequest="50">
+                </Rectangle>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Скорость" />
+                <Slider x:Name="SpeedSlider"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="255"
+                        Minimum="10"
+                        ValueChanged="SpeedSlider_ValueChanged" />
+                <Label  x:Name="SpeedText"
+                        Text="0"
+                        WidthRequest="38" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Яркость" />
+                <Slider x:Name="BrightnessSlider"
+                        HorizontalOptions="FillAndExpand"
+                        Maximum="255"
+                        Minimum="10"
+                        ValueChanged="BrightnessSlider_ValueChanged" />
+                <Label  x:Name="BrightnessText"
+                        Text="0"
+                        WidthRequest="38" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

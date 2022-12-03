@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+             Title="О приложении"
+             x:Class="GyverMatrix.Views.InfoPage"
+             Appearing="InfoPage_OnAppearing">
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+                     Spacing="10">
+            <Label Text="GyverMatrix (Xamarin Edition)"
+                   FontSize="Title"
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="Разработчики:"
+                   HorizontalOptions="StartAndExpand" />
+            <Label Text="Медведев Дмитрий (aka Texa)"
+                   HorizontalOptions="StartAndExpand" />
+            <Label Text="Дмитрий Сорокин (DIMANRUS)"
+                   HorizontalOptions="StartAndExpand" />
+            <StackLayout Spacing="2">
+                <Label Text="Версия приложения:"
+                       HorizontalOptions="StartAndExpand" />
+                <Label Text="21.01.22.01"
+                       HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout Spacing="5" Orientation="Horizontal">
+                <Label Text="Светлая"/>
+                <Switch x:Name="ThemeSwitch" Toggled="ThemeSwitch_OnToggled"/>
+                <Label Text="Тёмная" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
