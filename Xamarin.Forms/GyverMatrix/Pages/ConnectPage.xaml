@@ -2,19 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Подключение"
-             x:Class="GyverMatrix.Views.ConnectPage"
+             x:Class="GyverMatrix.Pages.ConnectPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:views="clr-namespace:GyverMatrix.View"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
-             Shell.FlyoutBehavior="{Binding FlyoutBehavior, Source={x:Reference Page}}"
+             Shell.FlyoutBehavior="{Binding FlyoutBehavior}"
              x:Name="Page"
              Appearing="Page_Appearing">
     <ContentPage.Content>
-        <StackLayout Padding="15">
+        <StackLayout Padding="15"
+                     xct:StateLayout.CurrentState="{Binding CurrentLayoutState}"
+                     xct:StateLayout.AnimateStateChanges="true">
+            <xct:StateLayout.StateViews>
+                <xct:StateView StateKey="Loading">
+                    <views:LoaderView />
+                </xct:StateView>
+            </xct:StateLayout.StateViews>
             <Entry x:Name="IpAdress"
-                   Text=""
-                   Placeholder="IpAdress" />
+                   Placeholder="IpAdress"
+                   Keyboard="Numeric"/>
             <Entry x:Name="Port"
-                   Text=""
-                   Placeholder="Port" />
+                   Placeholder="Port" 
+                   Keyboard="Numeric"/>
             <Button x:Name="ButCon"
                     Text="Подключиться"
                     BackgroundColor="Blue"

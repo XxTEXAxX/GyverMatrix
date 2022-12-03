@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Name="SettingsPageTitle"
              Title="Матрица 16x16"
-             x:Class="GyverMatrix.Views.SettingsPage"
+             x:Class="GyverMatrix.Pages.SettingsPage"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Appearing="SettingsPage_OnAppearing">
     <ContentPage.Content>

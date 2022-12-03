@@ -5,11 +5,9 @@ using Xamarin.Essentials;
 using System.Threading.Tasks;
 using GyverMatrix.Helpers;
 
-namespace GyverMatrix.Views {
+namespace GyverMatrix.Pages {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage {
-
-        //проблемы с рандомом, исправлю завтра
         public SettingsPage() =>
             InitializeComponent();
         private async Task SetBrightnesstAsync() {
