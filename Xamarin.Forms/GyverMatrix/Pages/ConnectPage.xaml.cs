@@ -25,23 +25,23 @@ namespace GyverMatrix.Pages
         {
             _load = false;
 
-            string autoconnect = await SecureStorage.GetAsync("AutoConnect");
+            //string autoconnect = await SecureStorage.GetAsync("AutoConnect");
 
             IpAdress.Text = await SecureStorage.GetAsync("IpAdress");
             Port.Text = await SecureStorage.GetAsync("Port");
 
-            if (autoconnect == "1")
-            {
-                AutoConnectSwitch.IsToggled = true;
-                if (!ConnectHelper.connected)
-                {
-                    await Connect();
-                }
-            }
-            else
-            {
-                AutoConnectSwitch.IsToggled = false;
-            }
+            //if (autoconnect == "1")
+            //{
+            //    AutoConnectSwitch.IsToggled = true;
+            //    if (!ConnectHelper.connected)
+            //    {
+            //        await Connect();
+            //    }
+            //}
+            //else
+            //{
+            //    AutoConnectSwitch.IsToggled = false;
+            //}
             _load = true;
         }
         #endregion
