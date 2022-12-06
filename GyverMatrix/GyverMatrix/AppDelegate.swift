@@ -17,7 +17,7 @@ var window: UIWindow?
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let startViewController = ViewController()
+        let startViewController = FirstViewController()
         window?.rootViewController = startViewController
         
         window?.makeKeyAndVisible()
