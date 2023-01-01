@@ -5,34 +5,80 @@
              x:Class="GyverMatrix.Pages.ConnectPage"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:views="clr-namespace:GyverMatrix.View"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Shell.FlyoutBehavior="{Binding FlyoutBehavior}"
              x:Name="Page"
-             Appearing="Page_Appearing">
+             Appearing="Page_Appearing"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Frame}">
+                <Setter Property="CornerRadius"
+                        Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="15"
                      xct:StateLayout.CurrentState="{Binding CurrentLayoutState}"
-                     xct:StateLayout.AnimateStateChanges="true">
+                     xct:StateLayout.AnimateStateChanges="true"
+                     VerticalOptions="Center"
+                     Margin="20"
+                     Spacing="20">
             <xct:StateLayout.StateViews>
                 <xct:StateView StateKey="Loading">
                     <views:LoaderView />
                 </xct:StateView>
             </xct:StateLayout.StateViews>
-            <Entry x:Name="IpAdress"
-                   Placeholder="IpAdress"
-                   Keyboard="Numeric"/>
-            <Entry x:Name="Port"
-                   Placeholder="Port" 
-                   Keyboard="Numeric"/>
-            <Button x:Name="ButCon"
-                    Text="Подключиться"
-                    BackgroundColor="Blue"
-                    Clicked="ConnectButton_OnClicked" />
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Подключаться при запуске" />
-                <Switch x:Name="AutoConnectSwitch"
-                        PropertyChanged="AutoConnectSwitch_PropertyChanged" />
-            </StackLayout>
+            <Label Text="Подключение"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="35" />
+            <Frame>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame HasShadow="False"
+                               BorderColor="DarkOrange"
+                               Padding="0,5,0,5"
+                               HorizontalOptions="FillAndExpand">
+                            <Entry x:Name="IpAdress"
+                                   Placeholder="IP Адрес"
+                                   Keyboard="Numeric"
+                                   HorizontalTextAlignment="Center"
+                                   FontAttributes="Bold" />
+                        </Frame>
+                        <Label Text=":"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold" />
+                        <Frame HasShadow="False"
+                               BorderColor="DarkOrange"
+                               Padding="0,5,0,5">
+                            <Entry x:Name="Port"
+                                   Placeholder="Порт"
+                                   Keyboard="Numeric"
+                                   MaxLength="4"
+                                   HorizontalOptions="Fill"
+                                   WidthRequest="80"
+                                   HorizontalTextAlignment="Center"
+                                   FontAttributes="Bold" />
+                        </Frame>
+                    </StackLayout>
+                    <Button x:Name="ButCon"
+                            Text="Подключиться"
+                            Clicked="ConnectButton_OnClicked"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            BorderColor="DarkOrange"
+                            BorderWidth="3" />
+                </StackLayout>
+            </Frame>
+            <Frame HasShadow="True">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Подключаться при запуске" />
+                    <Switch x:Name="AutoConnectSwitch"
+                            PropertyChanged="AutoConnectSwitch_PropertyChanged"
+                            HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,10 +13,10 @@ namespace GyverMatrix
 
         private async void Application_PageAppearing(object sender, Page e)
         {
-            if (await SecureStorage.GetAsync("Theme") != null)
-                return;
-            await SecureStorage.SetAsync("Theme", "Dark");
-            UserAppTheme = OSAppTheme.Dark;
+            //if (await SecureStorage.GetAsync("Theme") != null)
+            //    return;
+            //await SecureStorage.SetAsync("Theme", "Dark");
+            UserAppTheme = OSAppTheme.Light;
         }
     }
 }
