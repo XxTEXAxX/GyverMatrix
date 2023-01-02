@@ -56,10 +56,20 @@ namespace GyverMatrix.Pages
                 NotifyPropertyChanged();
             }
         }
+
+        public bool NavBarIsVisible {
+            get => _navBarIsVisible;
+            private set
+            {
+                _navBarIsVisible = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         #endregion
 
         #region Fields
-        private bool _load;
+        private bool _load, _navBarIsVisible;
         private LayoutState _currentLayoutState = LayoutState.None;
         #endregion
 
@@ -88,6 +98,7 @@ namespace GyverMatrix.Pages
                     await ParseHelper.SetSettingsNet(await UdpHelper.Receive());
 
                     ButCon.BackgroundColor = Color.Green;
+                    NavBarIsVisible = true;
                     ButCon.Text = "Подключено";
                 }
                 else
@@ -140,6 +151,28 @@ namespace GyverMatrix.Pages
         public new event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "") =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+
         #endregion
+
+        async void Theme_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        {
+            string theme = ((RadioButton)sender).Content.ToString();
+            switch (theme)
+            {
+                case "Тёмная":
+                    Application.Current.UserAppTheme = OSAppTheme.Dark;
+                    await SecureStorage.SetAsync("Theme", "dark");
+                    break;
+                case "Светлая":
+                    Application.Current.UserAppTheme = OSAppTheme.Light;
+                    await SecureStorage.SetAsync("Theme", "light");
+                    break;
+                default:
+                    Application.Current.UserAppTheme = OSAppTheme.Dark;
+                    await SecureStorage.SetAsync("Theme", string.Empty);
+                    break;
+            }
+        }
     }
 }

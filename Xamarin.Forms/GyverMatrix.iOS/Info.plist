@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>GyverMatrix</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.GyverMatrix</string>
+	<string>com.dimanrusteam.GyverMatrix</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>

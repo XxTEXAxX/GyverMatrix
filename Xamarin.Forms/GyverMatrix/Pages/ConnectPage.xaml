@@ -6,24 +6,16 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:views="clr-namespace:GyverMatrix.View"
              Shell.FlyoutBehavior="{Binding FlyoutBehavior}"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              x:Name="Page"
              Appearing="Page_Appearing"
              Shell.NavBarIsVisible="False">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="{x:Type Frame}">
-                <Setter Property="CornerRadius"
-                        Value="10" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Padding="15"
-                     xct:StateLayout.CurrentState="{Binding CurrentLayoutState}"
+        <StackLayout xct:StateLayout.CurrentState="{Binding CurrentLayoutState}"
                      xct:StateLayout.AnimateStateChanges="true"
                      VerticalOptions="Center"
                      Margin="20"
-                     Spacing="20">
+                     Spacing="10">
             <xct:StateLayout.StateViews>
                 <xct:StateView StateKey="Loading">
                     <views:LoaderView />
@@ -32,26 +24,28 @@
             <Label Text="Подключение"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
-                   FontSize="35" />
+                   FontSize="35"
+                   Margin="0,15"/>
             <Frame>
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Frame HasShadow="False"
                                BorderColor="DarkOrange"
-                               Padding="0,5,0,5"
+                               Padding="5,5"
                                HorizontalOptions="FillAndExpand">
                             <Entry x:Name="IpAdress"
                                    Placeholder="IP Адрес"
                                    Keyboard="Numeric"
                                    HorizontalTextAlignment="Center"
-                                   FontAttributes="Bold" />
+                                   FontAttributes="Bold"
+                                   MaxLength="15"/>
                         </Frame>
                         <Label Text=":"
                                VerticalOptions="Center"
                                FontAttributes="Bold" />
                         <Frame HasShadow="False"
                                BorderColor="DarkOrange"
-                               Padding="0,5,0,5">
+                               Padding="5,5">
                             <Entry x:Name="Port"
                                    Placeholder="Порт"
                                    Keyboard="Numeric"
@@ -66,17 +60,30 @@
                             Text="Подключиться"
                             Clicked="ConnectButton_OnClicked"
                             FontAttributes="Bold"
-                            BackgroundColor="Transparent"
-                            BorderColor="DarkOrange"
-                            BorderWidth="3" />
+                            BackgroundColor="DarkOrange"
+                            BorderWidth="1"
+                            FontSize="20"/>
                 </StackLayout>
             </Frame>
             <Frame HasShadow="True">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Подключаться при запуске" />
+                    <Label Text="Подключаться при запуске"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"/>
                     <Switch x:Name="AutoConnectSwitch"
                             PropertyChanged="AutoConnectSwitch_PropertyChanged"
                             HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+            <Frame HasShadow="True">
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <RadioButton GroupName="Theme" Content="Тьма"
+                                 CheckedChanged="Theme_CheckedChanged"/>
+                    <RadioButton GroupName="Theme" Content="Свет"
+                                 CheckedChanged="Theme_CheckedChanged"/>
+                    <RadioButton GroupName="Theme" Content="Система"
+                                 CheckedChanged="Theme_CheckedChanged"/>
                 </StackLayout>
             </Frame>
         </StackLayout>
