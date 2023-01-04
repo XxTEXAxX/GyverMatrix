@@ -6,6 +6,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:views="clr-namespace:GyverMatrix.View"
              Shell.FlyoutBehavior="{Binding FlyoutBehavior}"
+             xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              x:Name="Page"
              Appearing="Page_Appearing"
@@ -76,15 +77,26 @@
                 </StackLayout>
             </Frame>
             <Frame HasShadow="True">
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center">
-                    <RadioButton GroupName="Theme" Content="Тьма"
+                <!--<StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             RadioButtonGroup.GroupName="Theme">
+                    <RadioButton Content="Тьма"         CheckedChanged="Theme_CheckedChanged"/>
+                    <RadioButton Content="Свет"
                                  CheckedChanged="Theme_CheckedChanged"/>
-                    <RadioButton GroupName="Theme" Content="Свет"
+                    <RadioButton Content="Система"
                                  CheckedChanged="Theme_CheckedChanged"/>
-                    <RadioButton GroupName="Theme" Content="Система"
-                                 CheckedChanged="Theme_CheckedChanged"/>
-                </StackLayout>
+                </StackLayout>-->
+                <controls:SegmentedControl x:Name="ThemeSegmentedControl"                   SelectedSegment="0"
+                                           ValueChanged="Theme_ValueChanged"
+                                           Background="DarkOrange"
+                                           SelectedTextColor="{AppThemeBinding Dark=Black, Light=White}"
+                                           TintColor="{AppThemeBinding Dark=White, Light=Black}">
+                    <controls:SegmentedControl.Children>
+                        <controls:SegmentedControlOption Text="Система"/>
+                        <controls:SegmentedControlOption Text="Свет" />
+                        <controls:SegmentedControlOption Text="Тьма" />
+                    </controls:SegmentedControl.Children>
+                </controls:SegmentedControl>
             </Frame>
         </StackLayout>
     </ContentPage.Content>

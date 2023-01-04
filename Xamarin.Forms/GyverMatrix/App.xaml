@@ -13,11 +13,10 @@
         <Style TargetType="{x:Type Picker}">
             <Setter Property="FontSize"
                     Value="20" />
-            <!--<Setter Property="TextColor"
-                    Value="{AppThemeBinding Light=Black, Dark=White}" />-->
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light=Black, Dark=White}" />
         </Style>
-        <Style TargetType="{x:Type Entry}">
-            
+        <Style TargetType="{x:Type Entry}">   
             <Setter Property="FontSize"
                     Value="20" />
             <Setter Property="TextColor"
@@ -36,10 +35,10 @@
                     Value="Coral" />
         </Style>
         <Style TargetType="{x:Type Slider}">
-            <!--<Setter Property="MinimumTrackColor"
+            <Setter Property="MinimumTrackColor"
                     Value="{AppThemeBinding Light=Black, Dark=White}" />
             <Setter Property="MaximumTrackColor"
-                    Value="{AppThemeBinding Light=DarkGray, Dark=Gray}" />-->
+                    Value="{AppThemeBinding Light=DarkGray, Dark=Gray}" />
             <Setter Property="ThumbColor"
                     Value="Coral" />
         </Style>
@@ -56,6 +55,12 @@
                     Value="10"/>
             <Setter Property="BorderColor"
                     Value="{AppThemeBinding Dark=White}"/>
+        </Style>
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="BackgroundColor"
+                    Value="Transparent"/>
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Dark=White, Light=Black}"/>
         </Style>
     </Application.Resources>
 </Application>

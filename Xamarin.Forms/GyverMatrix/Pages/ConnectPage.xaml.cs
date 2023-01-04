@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
 using System.Diagnostics;
 using System.Timers;
+using SegmentedControl;
 
 namespace GyverMatrix.Pages
 {
@@ -23,13 +24,17 @@ namespace GyverMatrix.Pages
         }
         private async void Page_Appearing(object sender, EventArgs e)
         {
-            _load = false;
-
             //string autoconnect = await SecureStorage.GetAsync("AutoConnect");
 
             IpAdress.Text = await SecureStorage.GetAsync("IpAdress");
             Port.Text = await SecureStorage.GetAsync("Port");
-
+            Application.Current.UserAppTheme = await SecureStorage.GetAsync("Theme") switch
+            {
+                "dark" => OSAppTheme.Dark,
+                "light" => OSAppTheme.Light,
+                _ => OSAppTheme.Unspecified
+            };
+            ThemeSegmentedControl.SelectedSegment = (int)Application.Current.UserAppTheme;
             //if (autoconnect == "1")
             //{
             //    AutoConnectSwitch.IsToggled = true;
@@ -42,7 +47,6 @@ namespace GyverMatrix.Pages
             //{
             //    AutoConnectSwitch.IsToggled = false;
             //}
-            _load = true;
         }
         #endregion
         #region Properties
@@ -57,7 +61,8 @@ namespace GyverMatrix.Pages
             }
         }
 
-        public bool NavBarIsVisible {
+        public bool NavBarIsVisible
+        {
             get => _navBarIsVisible;
             private set
             {
@@ -155,18 +160,22 @@ namespace GyverMatrix.Pages
 
         #endregion
 
-        async void Theme_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        async void Theme_ValueChanged(System.Object sender, SegmentedControl.FormsPlugin.Abstractions.ValueChangedEventArgs e)
         {
-            string theme = ((RadioButton)sender).Content.ToString();
-            switch (theme)
+            if (!_load)
             {
-                case "Тёмная":
-                    Application.Current.UserAppTheme = OSAppTheme.Dark;
-                    await SecureStorage.SetAsync("Theme", "dark");
-                    break;
-                case "Светлая":
+                _load = true;
+                return;
+            }
+            switch (e.NewValue)
+            {
+                case 1:
                     Application.Current.UserAppTheme = OSAppTheme.Light;
                     await SecureStorage.SetAsync("Theme", "light");
+                    break;
+                case 2:
+                    Application.Current.UserAppTheme = OSAppTheme.Dark;
+                    await SecureStorage.SetAsync("Theme", "dark");
                     break;
                 default:
                     Application.Current.UserAppTheme = OSAppTheme.Dark;
