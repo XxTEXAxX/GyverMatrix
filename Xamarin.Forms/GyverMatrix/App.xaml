@@ -9,6 +9,8 @@
                     Value="18" />
             <Setter Property="TextColor"
                     Value="{AppThemeBinding Light=Black, Dark=White}" />
+            <Setter Property="VerticalTextAlignment"
+                    Value="Center"/>
         </Style>
         <Style TargetType="{x:Type Picker}">
             <Setter Property="FontSize"

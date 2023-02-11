@@ -81,43 +81,43 @@ namespace GyverMatrix.Pages
         #region Private Methods
         private async Task Connect()
         {
-            if (!ConnectHelper.connected)
-            {
-                if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text)))
-                {
+            //if (!ConnectHelper.connected)
+            //{
+            //    if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text)))
+            //    {
 
-                    //запрос настроек
-                    await UdpHelper.Send("$18 1;");
-                    await ParseHelper.SetSettings(await UdpHelper.Receive());
+            //        //запрос настроек
+            //        await UdpHelper.Send("$18 1;");
+            //        await ParseHelper.SetSettings(await UdpHelper.Receive());
 
-                    //запрос эффектов
-                    await UdpHelper.Send("$18 99;");
-                    await ParseHelper.SetEffects(await UdpHelper.Receive());
+            //        //запрос эффектов
+            //        await UdpHelper.Send("$18 99;");
+            //        await ParseHelper.SetEffects(await UdpHelper.Receive());
 
-                    //запрос игр
-                    await UdpHelper.Send("$18 98;");
-                    await ParseHelper.SetGames(await UdpHelper.Receive());
+            //        //запрос игр
+            //        await UdpHelper.Send("$18 98;");
+            //        await ParseHelper.SetGames(await UdpHelper.Receive());
 
-                    //запрос настроек сети 
-                    await UdpHelper.Send("$18 9;");
-                    await ParseHelper.SetSettingsNet(await UdpHelper.Receive());
+            //        //запрос настроек сети 
+            //        await UdpHelper.Send("$18 9;");
+            //        await ParseHelper.SetSettingsNet(await UdpHelper.Receive());
 
-                    ButCon.BackgroundColor = Color.Green;
-                    NavBarIsVisible = true;
-                    ButCon.Text = "Подключено";
-                }
-                else
-                {
-                    ButCon.BackgroundColor = Color.Red;
-                    ButCon.Text = "Не подключено";
-                }
-            }
-            else
-            {
-                ButCon.BackgroundColor = Color.Blue;
-                ButCon.Text = "Подключить";
-                UdpHelper.CloseConnect();
-            }
+            //        ButCon.BackgroundColor = Color.Green;
+            //        NavBarIsVisible = true;
+            //        ButCon.Text = "Подключено";
+            //    }
+            //    else
+            //    {
+            //        ButCon.BackgroundColor = Color.Red;
+            //        ButCon.Text = "Не подключено";
+            //    }
+            //}
+            //else
+            //{
+            //    ButCon.BackgroundColor = Color.Blue;
+            //    ButCon.Text = "Подключить";
+            //    UdpHelper.CloseConnect();
+            //}
             FlyoutBehavior = FlyoutBehavior.Flyout;
             NotifyPropertyChanged(nameof(FlyoutBehavior));
         }

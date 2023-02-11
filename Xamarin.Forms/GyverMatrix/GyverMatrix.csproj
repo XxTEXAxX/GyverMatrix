@@ -49,4 +49,14 @@
   <ItemGroup>
     <None Remove="SegmentedControl.FormsPlugin" />
   </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy inheritsSet="null" scope="application/xaml" />
+          <XmlFormattingPolicy inheritsSet="null" scope="application/xaml" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

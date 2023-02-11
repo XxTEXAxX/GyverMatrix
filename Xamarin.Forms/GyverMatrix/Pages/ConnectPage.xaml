@@ -9,8 +9,7 @@
              xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              x:Name="Page"
-             Appearing="Page_Appearing"
-             Shell.NavBarIsVisible="False">
+             Appearing="Page_Appearing">
     <ContentPage.Content>
         <StackLayout xct:StateLayout.CurrentState="{Binding CurrentLayoutState}"
                      xct:StateLayout.AnimateStateChanges="true"
@@ -77,20 +76,11 @@
                 </StackLayout>
             </Frame>
             <Frame HasShadow="True">
-                <!--<StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center"
-                             RadioButtonGroup.GroupName="Theme">
-                    <RadioButton Content="Тьма"         CheckedChanged="Theme_CheckedChanged"/>
-                    <RadioButton Content="Свет"
-                                 CheckedChanged="Theme_CheckedChanged"/>
-                    <RadioButton Content="Система"
-                                 CheckedChanged="Theme_CheckedChanged"/>
-                </StackLayout>-->
-                <controls:SegmentedControl x:Name="ThemeSegmentedControl"                   SelectedSegment="0"
+                <controls:SegmentedControl x:Name="ThemeSegmentedControl" SelectedSegment="0"
                                            ValueChanged="Theme_ValueChanged"
                                            Background="DarkOrange"
-                                           SelectedTextColor="{AppThemeBinding Dark=Black, Light=White}"
-                                           TintColor="{AppThemeBinding Dark=White, Light=Black}">
+                                           SelectedTextColor="Black"
+                                           TintColor="White">
                     <controls:SegmentedControl.Children>
                         <controls:SegmentedControlOption Text="Система"/>
                         <controls:SegmentedControlOption Text="Свет" />
