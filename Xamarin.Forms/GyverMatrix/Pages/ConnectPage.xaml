@@ -7,6 +7,7 @@
              xmlns:views="clr-namespace:GyverMatrix.View"
              Shell.FlyoutBehavior="{Binding FlyoutBehavior}"
              xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions"
+             xmlns:languageExtension="clr-namespace:GyverMatrix.Extensions;assembly=GyverMatrix"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              x:Name="Page"
              Appearing="Page_Appearing">
@@ -57,7 +58,7 @@
                         </Frame>
                     </StackLayout>
                     <Button x:Name="ButCon"
-                            Text="Подключиться"
+                            Text="{languageExtension:LanguageMarkup Connect}"
                             Clicked="ConnectButton_OnClicked"
                             FontAttributes="Bold"
                             BackgroundColor="DarkOrange"
