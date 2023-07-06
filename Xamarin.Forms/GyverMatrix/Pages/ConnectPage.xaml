@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Подключение"
+             Title="{languageExtension:LanguageMarkup TitleConnectPage}"
              x:Class="GyverMatrix.Pages.ConnectPage"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:views="clr-namespace:GyverMatrix.View"
@@ -22,11 +22,6 @@
                     <views:LoaderView />
                 </xct:StateView>
             </xct:StateLayout.StateViews>
-            <Label Text="Подключение"
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold"
-                   FontSize="35"
-                   Margin="0,15"/>
             <Frame>
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
@@ -35,7 +30,7 @@
                                Padding="5,5"
                                HorizontalOptions="FillAndExpand">
                             <Entry x:Name="IpAdress"
-                                   Placeholder="IP Адрес"
+                                   Placeholder="{languageExtension:LanguageMarkup IPAdress}"
                                    Keyboard="Numeric"
                                    HorizontalTextAlignment="Center"
                                    FontAttributes="Bold"
@@ -48,7 +43,7 @@
                                BorderColor="DarkOrange"
                                Padding="5,5">
                             <Entry x:Name="Port"
-                                   Placeholder="Порт"
+                                   Placeholder="{languageExtension:LanguageMarkup Port}"
                                    Keyboard="Numeric"
                                    MaxLength="4"
                                    HorizontalOptions="Fill"
@@ -83,9 +78,21 @@
                                            SelectedTextColor="Black"
                                            TintColor="White">
                     <controls:SegmentedControl.Children>
-                        <controls:SegmentedControlOption Text="Система"/>
-                        <controls:SegmentedControlOption Text="Свет" />
-                        <controls:SegmentedControlOption Text="Тьма" />
+                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup System}"/>
+                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Light}" />
+                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Dark}" />
+                    </controls:SegmentedControl.Children>
+                </controls:SegmentedControl>
+            </Frame>
+            <Frame HasShadow="True">
+                <controls:SegmentedControl x:Name="LanguageSegmentedControl"
+                                           Background="DarkOrange"
+                                           SelectedTextColor="Black"
+                                           TintColor="White"
+                                           ValueChanged="Language_ValueChanged">
+                    <controls:SegmentedControl.Children>
+                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Russian}"/>
+                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup English}" />
                     </controls:SegmentedControl.Children>
                 </controls:SegmentedControl>
             </Frame>

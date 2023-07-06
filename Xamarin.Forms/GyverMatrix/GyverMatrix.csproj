@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <BuildWithMSBuildOnMono>true</BuildWithMSBuildOnMono>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -14,9 +15,9 @@
   <ItemGroup>
     <PackageReference Include="ColorPicker.Xamarin.Forms" Version="1.3.4.21" />
     <PackageReference Include="TouchTracking.Forms" Version="1.1.0" />
-    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.6" />
     <PackageReference Include="SegmentedControl.FormsPlugin" Version="2.0.1" />
   </ItemGroup>
 
@@ -56,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="SegmentedControl.FormsPlugin" />
+    <None Remove="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Languages\Resource.ru-RU.Designer.cs">
@@ -68,6 +70,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
