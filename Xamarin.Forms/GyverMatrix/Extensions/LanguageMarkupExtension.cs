@@ -11,8 +11,8 @@ public class LanguageMarkupExtension : IMarkupExtension
 
     public LanguageMarkupExtension()
     {
-        //ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
-        ci = new CultureInfo("en-US");
+        ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
+        //ci = new CultureInfo("en-US");
     }
 
     public string Text { get; set; }

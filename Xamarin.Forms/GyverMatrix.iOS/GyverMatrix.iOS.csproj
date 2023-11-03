@@ -30,6 +30,8 @@
     <CodesignProvision>iOS Team Provisioning Profile: *</CodesignProvision>
     <CodesignKey>Apple Development: dimanrus@dimanrusdev.ru (54XSVK2L6C)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -41,6 +43,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <CodesignProvision>Автоматически</CodesignProvision>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +61,7 @@
     <MtouchInterpreter>-all</MtouchInterpreter>
     <CodesignProvision>iOS Team Provisioning Profile: com.companyname.GyverMatrix</CodesignProvision>
     <BuildIpa>false</BuildIpa>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -70,6 +74,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <CodesignProvision>iOS Team Provisioning Profile: com.companyname.GyverMatrix</CodesignProvision>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -77,6 +82,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DependencyServices\Localize.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -179,5 +185,8 @@
       <Project>{858B28FC-F362-47A1-B52B-BAE7487C9DD6}</Project>
       <Name>GyverMatrix</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DependencyServices\" />
   </ItemGroup>
 </Project>

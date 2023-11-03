@@ -68,7 +68,10 @@ public partial class ConnectPage : INotifyPropertyChanged
 
     #region Fields
 
-    private bool _load, _navBarIsVisible;
+    private bool
+        _load,
+        _navBarIsVisible;
+
     private LayoutState _currentLayoutState = LayoutState.None;
 
     #endregion
@@ -120,7 +123,9 @@ public partial class ConnectPage : INotifyPropertyChanged
 
     #region Events
 
-    private async void ConnectButton_OnClicked(object sender, EventArgs e)
+    private async void ConnectButton_OnClicked(
+        object sender,
+        EventArgs e)
     {
         if (string.IsNullOrEmpty(IpAdress.Text) || string.IsNullOrEmpty(Port.Text))
         {
@@ -134,7 +139,9 @@ public partial class ConnectPage : INotifyPropertyChanged
         CurrentLayoutState = LayoutState.None;
     }
 
-    private async void AutoConnectSwitch_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    private async void AutoConnectSwitch_PropertyChanged(
+        object sender,
+        PropertyChangedEventArgs e)
     {
         if (!_load)
             return;
@@ -153,13 +160,16 @@ public partial class ConnectPage : INotifyPropertyChanged
     #region IPC Realization
 
     public new event PropertyChangedEventHandler PropertyChanged;
-    private void NotifyPropertyChanged([CallerMemberName] string propertyName = "") =>
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+    private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
     #endregion
 
-    private async void Theme_ValueChanged(object sender, SegmentedControl.FormsPlugin.Abstractions.ValueChangedEventArgs e)
+    private async void Theme_ValueChanged(
+        object sender,
+        SegmentedControl.FormsPlugin.Abstractions.ValueChangedEventArgs e)
     {
         if (!_load)
         {
@@ -185,5 +195,6 @@ public partial class ConnectPage : INotifyPropertyChanged
 
     void Language_ValueChanged(object sender, SegmentedControl.FormsPlugin.Abstractions.ValueChangedEventArgs e)
     {
+        
     }
 }
