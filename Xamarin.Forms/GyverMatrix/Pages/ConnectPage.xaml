@@ -31,7 +31,7 @@
                                HorizontalOptions="FillAndExpand">
                             <Entry x:Name="IpAdress"
                                    Placeholder="{languageExtension:LanguageMarkup IPAdress}"
-                                   Keyboard="Numeric"
+                                   Keyboard="Telephone"
                                    HorizontalTextAlignment="Center"
                                    FontAttributes="Bold"
                                    MaxLength="15"/>
@@ -62,17 +62,8 @@
                 </StackLayout>
             </Frame>
             <Frame HasShadow="True">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Подключаться при запуске"
-                           FontAttributes="Bold"
-                           VerticalTextAlignment="Center"/>
-                    <Switch x:Name="AutoConnectSwitch"
-                            PropertyChanged="AutoConnectSwitch_PropertyChanged"
-                            HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </Frame>
-            <Frame HasShadow="True">
-                <controls:SegmentedControl x:Name="ThemeSegmentedControl" SelectedSegment="0"
+                <controls:SegmentedControl x:Name="ThemeSegmentedControl"
+                                           SelectedSegment="0"
                                            ValueChanged="Theme_ValueChanged"
                                            Background="DarkOrange"
                                            SelectedTextColor="Black"
@@ -81,18 +72,6 @@
                         <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup System}"/>
                         <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Light}" />
                         <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Dark}" />
-                    </controls:SegmentedControl.Children>
-                </controls:SegmentedControl>
-            </Frame>
-            <Frame HasShadow="True">
-                <controls:SegmentedControl x:Name="LanguageSegmentedControl"
-                                           Background="DarkOrange"
-                                           SelectedTextColor="Black"
-                                           TintColor="White"
-                                           ValueChanged="Language_ValueChanged">
-                    <controls:SegmentedControl.Children>
-                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Russian}"/>
-                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup English}" />
                     </controls:SegmentedControl.Children>
                 </controls:SegmentedControl>
             </Frame>

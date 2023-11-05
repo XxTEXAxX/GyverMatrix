@@ -11,10 +11,10 @@ public partial class ConnectPage : INotifyPropertyChanged
         BindingContext = this;
     }
 
-    private async void Page_Appearing(object sender, EventArgs e)
+    private async void Page_Appearing(
+        object sender,
+        EventArgs e)
     {
-        //string autoconnect = await SecureStorage.GetAsync("AutoConnect");
-
         IpAdress.Text = await SecureStorage.GetAsync("IpAdress");
         Port.Text = await SecureStorage.GetAsync("Port");
         Application.Current.UserAppTheme = await SecureStorage.GetAsync("Theme") switch
@@ -24,18 +24,6 @@ public partial class ConnectPage : INotifyPropertyChanged
             _ => OSAppTheme.Unspecified
         };
         ThemeSegmentedControl.SelectedSegment = (int)Application.Current.UserAppTheme;
-        //if (autoconnect == "1")
-        //{
-        //    AutoConnectSwitch.IsToggled = true;
-        //    if (!ConnectHelper.connected)
-        //    {
-        //        await Connect();
-        //    }
-        //}
-        //else
-        //{
-        //    AutoConnectSwitch.IsToggled = false;
-        //}
     }
 
     #endregion
@@ -77,13 +65,13 @@ public partial class ConnectPage : INotifyPropertyChanged
     #endregion
 
     #region Private Methods
+
     private async Task Connect()
     {
         //if (!ConnectHelper.connected)
         //{
         //    if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text)))
         //    {
-
         //        //запрос настроек
         //        await UdpHelper.Send("$18 1;");
         //        await ParseHelper.SetSettings(await UdpHelper.Receive());
@@ -119,6 +107,7 @@ public partial class ConnectPage : INotifyPropertyChanged
         FlyoutBehavior = FlyoutBehavior.Flyout;
         NotifyPropertyChanged(nameof(FlyoutBehavior));
     }
+
     #endregion
 
     #region Events
@@ -138,34 +127,6 @@ public partial class ConnectPage : INotifyPropertyChanged
         await SecureStorage.SetAsync("Port", Port.Text);
         CurrentLayoutState = LayoutState.None;
     }
-
-    private async void AutoConnectSwitch_PropertyChanged(
-        object sender,
-        PropertyChangedEventArgs e)
-    {
-        if (!_load)
-            return;
-        if (AutoConnectSwitch.IsToggled)
-        {
-            await SecureStorage.SetAsync("AutoConnect", "1");
-        }
-        else
-        {
-            await SecureStorage.SetAsync("AutoConnect", "0");
-        }
-    }
-
-    #endregion
-
-    #region IPC Realization
-
-    public new event PropertyChangedEventHandler PropertyChanged;
-
-    private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-
-    #endregion
 
     private async void Theme_ValueChanged(
         object sender,
@@ -193,8 +154,15 @@ public partial class ConnectPage : INotifyPropertyChanged
         }
     }
 
-    void Language_ValueChanged(object sender, SegmentedControl.FormsPlugin.Abstractions.ValueChangedEventArgs e)
-    {
-        
-    }
+    #endregion
+
+    #region IPC Realization
+
+    public new event PropertyChangedEventHandler PropertyChanged;
+
+    private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+
+    #endregion
 }

@@ -2,6 +2,7 @@
 using Foundation;
 using GyverMatrix.Interfaces;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 [assembly: Dependency(typeof(GyverMatrix.iOS.DependencyServices.Localize))]
 namespace GyverMatrix.iOS.DependencyServices;
