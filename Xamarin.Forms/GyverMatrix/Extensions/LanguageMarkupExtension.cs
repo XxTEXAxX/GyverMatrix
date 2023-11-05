@@ -5,14 +5,13 @@ namespace GyverMatrix.Extensions;
 [ContentProperty("Text")]
 public class LanguageMarkupExtension : IMarkupExtension
 {
-    private readonly CultureInfo ci;
+    private readonly CultureInfo _cultureInfo;
     
-    const string ResourceId = "GyverMatrix.Languages.Resource";
+    private const string ResourceId = "GyverMatrix.Languages.Resource";
 
     public LanguageMarkupExtension()
     {
-        //ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
-        ci = new CultureInfo("en-US");
+        _cultureInfo = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
     }
 
     public string Text { get; set; }
@@ -25,7 +24,7 @@ public class LanguageMarkupExtension : IMarkupExtension
         ResourceManager resmgr = new(ResourceId,
                     typeof(LanguageMarkupExtension).GetTypeInfo().Assembly);
 
-        var translation = resmgr.GetString(Text, ci);
+        var translation = resmgr.GetString(Text, _cultureInfo);
 
         translation ??= Text;
         return translation;

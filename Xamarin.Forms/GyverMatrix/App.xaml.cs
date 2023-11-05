@@ -7,8 +7,4 @@ public partial class App
         InitializeComponent();
         MainPage = new AppShell();
     }
-
-    private async void Application_PageAppearing(object sender, Page e)
-    {
-    }
 }

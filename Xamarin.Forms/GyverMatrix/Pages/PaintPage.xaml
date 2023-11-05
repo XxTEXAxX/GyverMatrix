@@ -4,7 +4,10 @@
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              xmlns:forms="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
              xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
-             Title="Рисование"
+             xmlns:languageExtension="clr-namespace:GyverMatrix.Extensions;assembly=GyverMatrix"
+             xmlns:pages="clr-namespace:GyverMatrix.Pages"
+             x:DataType="pages:PaintPage"
+             Title="{languageExtension:LanguageMarkup Drawing}"
              x:Class="GyverMatrix.Pages.PaintPage"
              x:Name="Page"
              Appearing="PaintPage_OnAppearing">
@@ -16,7 +19,7 @@
                                            SelectedColorChanged="ColorTriangle_SelectedColorChanged"
                                            SelectedColor="{Binding CurrentColor, Source={x:Reference Page}}" />
                 <Button BackgroundColor="Red"
-                        Text="Закрыть"
+                        Text="{languageExtension:LanguageMarkup Close}"
                         Padding="20,5,20,5"
                         FontAttributes="Bold"
                         Clicked="CloseColorPicker_Clicked"
@@ -74,12 +77,12 @@
                         </BoxView>
                         <StackLayout Orientation="Horizontal"
                                      Margin="40,10,40,0">
-                            <Label Text="Яркость" />
+                            <Label Text="{languageExtension:LanguageMarkup Brightness}" />
                             <Slider x:Name="BrightnessSlider"
                                     HorizontalOptions="FillAndExpand"
                                     Maximum="255"
-                                    Minimum="10" 
-                                    ValueChanged="BrightnessSlider_ValueChanged"/>
+                                    Minimum="10"
+                                    ValueChanged="BrightnessSlider_ValueChanged" />
                             <Label  x:Name="BrightnessText"
                                     Text="0"
                                     WidthRequest="35" />
