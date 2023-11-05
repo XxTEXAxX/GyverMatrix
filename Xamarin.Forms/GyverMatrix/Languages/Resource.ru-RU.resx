@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
-    Microsoft ResX Schema
-
+  <!-- 
+    Microsoft ResX Schema 
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,79 +26,79 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -119,38 +119,155 @@
   </resheader>
   <data name="Connect" xml:space="preserve">
     <value>Подключиться</value>
-    <comment/>
   </data>
   <data name="TitleConnectPage" xml:space="preserve">
     <value>Подключение</value>
-    <comment/>
   </data>
   <data name="IPAdress" xml:space="preserve">
     <value>IP адрес</value>
-    <comment/>
   </data>
   <data name="Port" xml:space="preserve">
     <value>Порт</value>
-    <comment/>
   </data>
   <data name="System" xml:space="preserve">
     <value>Система</value>
-    <comment/>
   </data>
   <data name="Light" xml:space="preserve">
     <value>Свет</value>
-    <comment/>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Тьма</value>
-    <comment/>
   </data>
   <data name="Russian" xml:space="preserve">
     <value>Русский</value>
-    <comment/>
   </data>
   <data name="English" xml:space="preserve">
     <value>Английский</value>
-    <comment/>
+  </data>
+  <data name="AboutApp" xml:space="preserve">
+    <value>О приложении</value>
+  </data>
+  <data name="AmperageLimit" xml:space="preserve">
+    <value>Ограничение по току</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="Auto" xml:space="preserve">
+    <value>Авто</value>
+  </data>
+  <data name="AutoModeIn" xml:space="preserve">
+    <value>Авторежим через</value>
+  </data>
+  <data name="AutoSwitchMode" xml:space="preserve">
+    <value>Автосмена режима</value>
+  </data>
+  <data name="Brightness" xml:space="preserve">
+    <value>Яркость</value>
+  </data>
+  <data name="ClockTopOfTheEffect" xml:space="preserve">
+    <value>Часы поверх эффекта</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="ConnectionSettings" xml:space="preserve">
+    <value>Настройки подключения</value>
+  </data>
+  <data name="Developers" xml:space="preserve">
+    <value>Разработчики:</value>
+  </data>
+  <data name="Drawing" xml:space="preserve">
+    <value>Рисование</value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>Эффект:</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>Эффекты</value>
+  </data>
+  <data name="EnableHotspot" xml:space="preserve">
+    <value>Включить точку доступа</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Заливка:</value>
+  </data>
+  <data name="Game" xml:space="preserve">
+    <value>Игра:</value>
+  </data>
+  <data name="Games" xml:space="preserve">
+    <value>Игры</value>
+  </data>
+  <data name="HotspotSettings" xml:space="preserve">
+    <value>Настройки точки доступа</value>
+  </data>
+  <data name="LocalIPAddress" xml:space="preserve">
+    <value>Локальный IP адрес</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Ручной</value>
+  </data>
+  <data name="Matrix" xml:space="preserve">
+    <value>Матрица</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>мин.</value>
+  </data>
+  <data name="ModeSelection" xml:space="preserve">
+    <value>Выбор режима</value>
+  </data>
+  <data name="NetworkName" xml:space="preserve">
+    <value>Название сети</value>
+  </data>
+  <data name="NetworkPassword" xml:space="preserve">
+    <value>Пароль сети</value>
+  </data>
+  <data name="NetworkSettings" xml:space="preserve">
+    <value>Настройки сети</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>След.</value>
+  </data>
+  <data name="OtherSettings" xml:space="preserve">
+    <value>Другие настройки</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Пред.</value>
+  </data>
+  <data name="RandomSwitch" xml:space="preserve">
+    <value>Случайный порядок</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Пуск</value>
+  </data>
+  <data name="RunningLine" xml:space="preserve">
+    <value>Бегущая строка</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>сек.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="SettingUpModes" xml:space="preserve">
+    <value>Настройка режимов</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Скорость</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="TextRunningLine" xml:space="preserve">
+    <value>Текст бегущей строки</value>
+  </data>
+  <data name="TurnGame" xml:space="preserve">
+    <value>Включить игру</value>
+  </data>
+  <data name="UseInDemoMode" xml:space="preserve">
+    <value>Использовать в демо-режиме</value>
+  </data>
+  <data name="VersionApp" xml:space="preserve">
+    <value>Версия приложения</value>
   </data>
 </root>

@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
-             Title="О приложении"
+             Title="{languageExtension:LanguageMarkup AboutApp}"
+             xmlns:languageExtension="clr-namespace:GyverMatrix.Extensions;assembly=GyverMatrix"
+             xmlns:pages="clr-namespace:GyverMatrix.Pages"
+             x:DataType="pages:InfoPage"
              x:Class="GyverMatrix.Pages.InfoPage"
              Appearing="InfoPage_OnAppearing">
     <ContentPage.Content>
@@ -11,22 +14,24 @@
             <Label Text="GyverMatrix (Xamarin Edition)"
                    FontSize="Title"
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text="Разработчики:"
+            <Label Text="{languageExtension:LanguageMarkup Developers}"
                    HorizontalOptions="StartAndExpand" />
             <Label Text="Медведев Дмитрий (aka Texa)"
                    HorizontalOptions="StartAndExpand" />
             <Label Text="Дмитрий Сорокин (DIMANRUS)"
                    HorizontalOptions="StartAndExpand" />
             <StackLayout Spacing="2">
-                <Label Text="Версия приложения:"
+                <Label Text="{languageExtension:LanguageMarkup VersionApp}"
                        HorizontalOptions="StartAndExpand" />
-                <Label Text="21.01.22.01"
+                <Label Text="1.1.0"
                        HorizontalOptions="StartAndExpand" />
             </StackLayout>
-            <StackLayout Spacing="5" Orientation="Horizontal">
-                <Label Text="Светлая"/>
-                <Switch x:Name="ThemeSwitch" Toggled="ThemeSwitch_OnToggled"/>
-                <Label Text="Тёмная" />
+            <StackLayout Spacing="5"
+                         Orientation="Horizontal">
+                <Label Text="{languageExtension:LanguageMarkup Light}" />
+                <Switch x:Name="ThemeSwitch"
+                        Toggled="ThemeSwitch_OnToggled" />
+                <Label Text="{languageExtension:LanguageMarkup Dark}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

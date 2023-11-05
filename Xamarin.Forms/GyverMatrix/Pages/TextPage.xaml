@@ -3,31 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:colorPicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
-             Title="Бегущая строка"
+             Title="{languageExtension:LanguageMarkup RunningLine}"
+             xmlns:languageExtension="clr-namespace:GyverMatrix.Extensions;assembly=GyverMatrix"
+             xmlns:pages="clr-namespace:GyverMatrix.Pages"
+             x:DataType="pages:ConnectPage"
              x:Class="GyverMatrix.Pages.TextPage"
              Appearing="ContentPage_Appearing">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand"
                      Padding="8">
             <Entry x:Name="Text"
-                   Placeholder="Текст бегущей строки" />
+                   Placeholder="{languageExtension:LanguageMarkup TextRunningLine}" />
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand">
-                <Button Text="Отправить"
+                <Button Text="{languageExtension:LanguageMarkup Send}"
                         Clicked="Send_Clicked" />
-                <Button Text="Пуск"
+                <Button Text="{languageExtension:LanguageMarkup Run}"
                         Clicked="Start_Clicked" />
-                <Button Text="Стоп"
+                <Button Text="{languageExtension:LanguageMarkup Stop}"
                         Clicked="Stop_Clicked" />
             </StackLayout>
             <StackLayout x:Name="Ts"
                          Orientation="Horizontal">
-                <Label Text="Использовать в демо-режиме" />
+                <Label Text="{languageExtension:LanguageMarkup UseInDemoMode}" />
                 <Switch x:Name="DemoSwitch"
                         PropertyChanged="DemoSwitch_PropertyChanged" />
             </StackLayout>
             <Picker x:Name="Col"
-                    Title="Заливка:"
+                    Title="{languageExtension:LanguageMarkup Fill}"
                     HorizontalOptions="FillAndExpand"
                     SelectedIndexChanged="Col_SelectedIndexChanged">
                 <Picker.Items>
@@ -47,7 +50,7 @@
                 </Rectangle>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Скорость" />
+                <Label Text="{languageExtension:LanguageMarkup Speed}" />
                 <Slider x:Name="SpeedSlider"
                         HorizontalOptions="FillAndExpand"
                         Maximum="255"
@@ -58,7 +61,7 @@
                         WidthRequest="38" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Яркость" />
+                <Label Text="{languageExtension:LanguageMarkup Brightness}" />
                 <Slider x:Name="BrightnessSlider"
                         HorizontalOptions="FillAndExpand"
                         Maximum="255"

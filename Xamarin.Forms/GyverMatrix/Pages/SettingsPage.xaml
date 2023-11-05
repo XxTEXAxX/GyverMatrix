@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Name="SettingsPageTitle"
              Title="Матрица"
+             xmlns:languageExtension="clr-namespace:GyverMatrix.Extensions;assembly=GyverMatrix"
+             xmlns:pages="clr-namespace:GyverMatrix.Pages"
+             x:DataType="pages:SettingsPage"
              x:Class="GyverMatrix.Pages.SettingsPage"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              Appearing="SettingsPage_OnAppearing">
@@ -12,127 +15,127 @@
                          Spacing="20">
                 <Frame>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Яркость"/>
+                        <Label Text="{languageExtension:LanguageMarkup Brightness}" />
                         <Slider x:Name="BrightnessSlider"
-                            HorizontalOptions="FillAndExpand"
-                            Maximum="255"
-                            Minimum="10"
-                            ValueChanged="BrightnessSlider_OnValueChanged" />
+                                HorizontalOptions="FillAndExpand"
+                                Maximum="255"
+                                Minimum="10"
+                                ValueChanged="BrightnessSlider_OnValueChanged" />
                         <Label  x:Name="BrightnessText"
-                            Text="0"
-                            MinimumWidthRequest="40" />
+                                Text="0"
+                                MinimumWidthRequest="40" />
                     </StackLayout>
                 </Frame>
                 <Frame>
                     <StackLayout>
-                        <Label Text="Настройки режимов"
-                       FontSize="Subtitle"
-                       HorizontalOptions="Center" />
+                        <Label Text="{languageExtension:LanguageMarkup SettingUpModes}"
+                               FontSize="Subtitle"
+                               HorizontalOptions="Center" />
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Ручной"
-                           VerticalOptions="Center" />
+                            <Label Text="{languageExtension:LanguageMarkup Manual}"
+                                   VerticalOptions="Center" />
                             <Switch x:Name="DemoSwitch"
-                            PropertyChanged="DemoSwitch_PropertyChanged" />
-                            <Label Text="Авто"
-                           VerticalOptions="Center" />
+                                    PropertyChanged="DemoSwitch_PropertyChanged" />
+                            <Label Text="{languageExtension:LanguageMarkup Auto}"
+                                   VerticalOptions="Center" />
                             <Button x:Name="Undo"
-                            Text="Пред."
-                            Clicked="Undo_Clicked" />
+                                    Text="{languageExtension:LanguageMarkup Previous}"
+                                    Clicked="Undo_Clicked" />
                             <Button x:Name="Next"
-                            Text="След."
-                            Clicked="Next_Clicked" />
+                                    Text="{languageExtension:LanguageMarkup Next}"
+                                    Clicked="Next_Clicked" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Автосмена режима"
-                           VerticalOptions="Center" />
+                            <Label Text="{languageExtension:LanguageMarkup AutoSwitchMode}"
+                                   VerticalOptions="Center" />
                             <Switch x:Name="AutoSwitch"
-                            PropertyChanged="AutoSwitch_PropertyChanged" />
+                                    PropertyChanged="AutoSwitch_PropertyChanged" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Случайный порядок"
-                           VerticalOptions="Center" />
+                            <Label Text="{languageExtension:LanguageMarkup RandomSwitch}"
+                                   VerticalOptions="Center" />
                             <Switch x:Name="RandomSwitch"
-                            PropertyChanged="RandomSwitch_PropertyChanged" />
+                                    PropertyChanged="RandomSwitch_PropertyChanged" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="StartAndExpand">
-                            <Label Text="Время режима - "
-                           VerticalOptions="Center"
-                           HorizontalOptions="FillAndExpand" />
+                                     HorizontalOptions="StartAndExpand">
+                            <Label Text="{languageExtension:LanguageMarkup ModeSelection}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand" />
                             <Entry x:Name="AutoTime1"
-                           Placeholder="сек."
-                           Keyboard="Numeric" />
-                            <Button Text="Установить"
-                            Clicked="AutoCheck1_Clicked" />
+                                   Placeholder="{languageExtension:LanguageMarkup Seconds}"
+                                   Keyboard="Numeric" />
+                            <Button Text="{languageExtension:LanguageMarkup Apply}"
+                                    Clicked="AutoCheck1_Clicked" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="StartAndExpand">
-                            <Label Text="Авторежим через - "
-                           VerticalOptions="Center"
-                           HorizontalOptions="FillAndExpand" />
+                                     HorizontalOptions="StartAndExpand">
+                            <Label Text="{languageExtension:LanguageMarkup AutoModeIn}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand" />
                             <Entry x:Name="AutoTime2"
-                           Placeholder="мин."
-                           Keyboard="Numeric" />
+                                   Placeholder="{languageExtension:LanguageMarkup Minutes}"
+                                   Keyboard="Numeric" />
                             <Button x:Name="AutoCheck2"
-                            Text="Установить"
-                            Clicked="AutoCheck2_Clicked" />
+                                    Text="{languageExtension:LanguageMarkup Apply}"
+                                    Clicked="AutoCheck2_Clicked" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
                 <Frame>
                     <StackLayout>
-                        <Label Text="Прочие настройки"
-                       FontSize="Subtitle"
-                       HorizontalOptions="Center" />
+                        <Label Text="{languageExtension:LanguageMarkup OtherSettings}"
+                               FontSize="Subtitle"
+                               HorizontalOptions="Center" />
                         <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="StartAndExpand">
-                            <Label Text="Ограничение по току"
-                           VerticalOptions="Center" />
+                                     HorizontalOptions="StartAndExpand">
+                            <Label Text="{languageExtension:LanguageMarkup AmperageLimit}"
+                                   VerticalOptions="Center" />
                             <Entry x:Name="Curret"
-                           Placeholder="мА" />
+                                   Placeholder="мА" />
                             <Button x:Name="AutoCheck3"
-                            Text="Установить"
-                            Clicked="AutoCheck3_Clicked" />
+                                    Text="{languageExtension:LanguageMarkup Apply}"
+                                    Clicked="AutoCheck3_Clicked" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
                 <Frame>
                     <StackLayout>
-                        <Label Text="Настройки сети"
-                       FontSize="Subtitle"
-                       HorizontalOptions="Center" />
-                        <Label Text="Настройки точки доступа"
-                       VerticalOptions="Center"
-                       HorizontalOptions="FillAndExpand" />
+                        <Label Text="{languageExtension:LanguageMarkup NetworkSettings}"
+                               FontSize="Subtitle"
+                               HorizontalOptions="Center" />
+                        <Label Text="{languageExtension:LanguageMarkup HotspotSettings}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="FillAndExpand" />
                         <Entry x:Name="NameEntry1"
-                       Placeholder="Название сети" />
+                               Placeholder="{languageExtension:LanguageMarkup NetwrokName}" />
                         <Entry x:Name="PassEntry1"
-                       Placeholder="Пароль сети" />
+                               Placeholder="{languageExtension:LanguageMarkup NetworkPassword}" />
                         <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="StartAndExpand">
-                            <Label Text="Включить точку доступа"
-                           VerticalOptions="Center"
-                           HorizontalOptions="FillAndExpand" />
+                                     HorizontalOptions="StartAndExpand">
+                            <Label Text="{languageExtension:LanguageMarkup EnableHotspot}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand" />
                             <Switch x:Name="NetSwitch"
-                            PropertyChanged="NetSwitch_PropertyChanged" />
+                                    PropertyChanged="NetSwitch_PropertyChanged" />
                         </StackLayout>
-                        <Button Text="Установить"
-                        Clicked="NetSet1_Clicked" />
+                        <Button Text="{languageExtension:LanguageMarkup Apply}"
+                                Clicked="NetSet1_Clicked" />
                     </StackLayout>
                 </Frame>
                 <Frame>
                     <StackLayout>
-                        <Label Text="Настройки подключения"
-                       HorizontalOptions="Center"
-                               FontSize="Subtitle"/>
+                        <Label Text="{languageExtension:LanguageMarkup ConnectionSettings}"
+                               HorizontalOptions="Center"
+                               FontSize="Subtitle" />
                         <Entry x:Name="NameEntry2"
-                       Placeholder="Название сети" />
+                               Placeholder="{languageExtension:LanguageMarkup NetworkName}" />
                         <Entry x:Name="PassEntry2"
-                       Placeholder="Пароль сети" />
+                               Placeholder="{languageExtension:LanguageMarkup NetworkPassword}" />
                         <Entry x:Name="IpEntry2"
-                       Placeholder="Локальный IP-адресс в сети" />
-                        <Button Text="Установить"
-                        Clicked="NetSet2_Clicked" />
+                               Placeholder="{languageExtension:LanguageMarkup LocalIPAddress}" />
+                        <Button Text="{languageExtension:LanguageMarkup Apply}"
+                                Clicked="NetSet2_Clicked" />
                     </StackLayout>
                 </Frame>
             </StackLayout>

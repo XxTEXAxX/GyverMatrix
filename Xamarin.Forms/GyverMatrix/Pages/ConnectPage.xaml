@@ -8,6 +8,8 @@
              Shell.FlyoutBehavior="{Binding FlyoutBehavior}"
              xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions"
              xmlns:languageExtension="clr-namespace:GyverMatrix.Extensions;assembly=GyverMatrix"
+             xmlns:pages="clr-namespace:GyverMatrix.Pages"
+             x:DataType="pages:ConnectPage"
              BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
              x:Name="Page"
              Appearing="Page_Appearing">
@@ -34,7 +36,7 @@
                                    Keyboard="Telephone"
                                    HorizontalTextAlignment="Center"
                                    FontAttributes="Bold"
-                                   MaxLength="15"/>
+                                   MaxLength="15" />
                         </Frame>
                         <Label Text=":"
                                VerticalOptions="Center"
@@ -58,7 +60,7 @@
                             FontAttributes="Bold"
                             BackgroundColor="DarkOrange"
                             BorderWidth="1"
-                            FontSize="20"/>
+                            FontSize="20" />
                 </StackLayout>
             </Frame>
             <Frame HasShadow="True">
@@ -69,7 +71,7 @@
                                            SelectedTextColor="Black"
                                            TintColor="White">
                     <controls:SegmentedControl.Children>
-                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup System}"/>
+                        <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup System}" />
                         <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Light}" />
                         <controls:SegmentedControlOption Text="{languageExtension:LanguageMarkup Dark}" />
                     </controls:SegmentedControl.Children>
