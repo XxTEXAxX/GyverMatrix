@@ -1,20 +1,18 @@
-﻿using GyverMatrix.Interfaces;
-
-namespace GyverMatrix.Extensions;
+﻿namespace GyverMatrix.Extensions;
 
 [ContentProperty("Text")]
 public class LanguageMarkupExtension : IMarkupExtension
 {
     private readonly CultureInfo _cultureInfo;
-    
+
     private const string ResourceId = "GyverMatrix.Languages.Resource";
+
+    public string Text { get; set; }
 
     public LanguageMarkupExtension()
     {
         _cultureInfo = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
     }
-
-    public string Text { get; set; }
 
     public object ProvideValue(IServiceProvider serviceProvider)
     {

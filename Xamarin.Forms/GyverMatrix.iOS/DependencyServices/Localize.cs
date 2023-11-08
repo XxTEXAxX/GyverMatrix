@@ -1,12 +1,5 @@
-﻿using System.Globalization;
-using Foundation;
-using GyverMatrix.Interfaces;
-using Xamarin.Forms;
-using Xamarin.Essentials;
-
-[assembly: Dependency(typeof(GyverMatrix.iOS.DependencyServices.Localize))]
+﻿[assembly: Dependency(typeof(GyverMatrix.iOS.DependencyServices.Localize))]
 namespace GyverMatrix.iOS.DependencyServices;
-
 
 public class Localize : ILocalize
 {

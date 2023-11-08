@@ -116,8 +116,7 @@
                             <Label Text="{languageExtension:LanguageMarkup EnableHotspot}"
                                    VerticalOptions="Center"
                                    HorizontalOptions="FillAndExpand" />
-                            <Switch x:Name="NetSwitch"
-                                    PropertyChanged="NetSwitch_PropertyChanged" />
+                            <Switch x:Name="NetSwitch" />
                         </StackLayout>
                         <Button Text="{languageExtension:LanguageMarkup Apply}"
                                 Clicked="NetSet1_Clicked" />
@@ -134,8 +133,7 @@
                                Placeholder="{languageExtension:LanguageMarkup NetworkPassword}" />
                         <Entry x:Name="IpEntry2"
                                Placeholder="{languageExtension:LanguageMarkup LocalIPAddress}" />
-                        <Button Text="{languageExtension:LanguageMarkup Apply}"
-                                Clicked="NetSet2_Clicked" />
+                        <Button Text="{languageExtension:LanguageMarkup Apply}" />
                     </StackLayout>
                 </Frame>
             </StackLayout>

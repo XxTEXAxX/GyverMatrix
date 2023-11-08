@@ -1,14 +1,16 @@
-﻿using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace GyverMatrix.Helpers;
 
-namespace GyverMatrix.Helpers;
 internal static class UdpHelper
 {
-    private static UdpClient UdpClient = new UdpClient();
+    private static UdpClient UdpClient = new();
     public static string Ip;
     public static int Port;
-    public static bool Connect(string ipAdress, int port)
+    private static string _text;
+    private static bool _x;
+
+    public static bool Connect(
+        string ipAdress,
+        int port)
     {
         try
         {
@@ -22,6 +24,7 @@ internal static class UdpHelper
             return false;
         }
     }
+
     public static void CloseConnect()
     {
         UdpClient.Close();
@@ -41,8 +44,7 @@ internal static class UdpHelper
             return false;
         }
     }
-    private static string _text;
-    private static bool _x;
+
     public static async Task<bool> Send(string message)
     {
         try
@@ -60,6 +62,7 @@ internal static class UdpHelper
         }
         return _x;
     }
+
     public static Task<string> Receive()
     {
         return Task.FromResult(_text);

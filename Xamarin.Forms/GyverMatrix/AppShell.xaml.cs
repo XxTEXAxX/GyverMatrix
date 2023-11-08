@@ -1,6 +1,7 @@
-﻿namespace GyverMatrix {
-    public partial class AppShell {
-        public AppShell() =>
-            InitializeComponent();
-    }
+﻿namespace GyverMatrix;
+
+public partial class AppShell
+{
+    public AppShell() =>
+        InitializeComponent();
 }

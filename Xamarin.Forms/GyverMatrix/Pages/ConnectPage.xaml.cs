@@ -68,7 +68,7 @@ public partial class ConnectPage : INotifyPropertyChanged
 
     private async Task Connect()
     {
-/*        if (!ConnectHelper.IsConnected)
+        if (!ConnectHelper.IsConnected)
         {
             if (UdpHelper.Connect(IpAdress.Text, int.Parse(Port.Text)))
             {
@@ -104,7 +104,7 @@ public partial class ConnectPage : INotifyPropertyChanged
             ButCon.BackgroundColor = Color.Blue;
             ButCon.Text = "Подключить";
             UdpHelper.CloseConnect();
-        }*/
+        }
         FlyoutBehavior = FlyoutBehavior.Flyout;
         NotifyPropertyChanged(nameof(FlyoutBehavior));
     }
@@ -117,11 +117,11 @@ public partial class ConnectPage : INotifyPropertyChanged
         object sender,
         EventArgs e)
     {
-        /*        if (string.IsNullOrEmpty(IpAdress.Text) || string.IsNullOrEmpty(Port.Text))
-                {
-                    await DisplayAlert("Ошибка", "Заполните поля", "Закрыть");
-                    return;
-                }*/
+        if (string.IsNullOrEmpty(IpAdress.Text) || string.IsNullOrEmpty(Port.Text))
+        {
+            await DisplayAlert("Ошибка", "Заполните поля", "Закрыть");
+            return;
+        }
         CurrentLayoutState = LayoutState.Loading;
         await Connect();
         await SecureStorage.SetAsync("IpAdress", IpAdress.Text ?? string.Empty);

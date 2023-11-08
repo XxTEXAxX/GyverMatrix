@@ -10,3 +10,7 @@ global using System.ComponentModel;
 global using System.Runtime.CompilerServices;
 global using GyverMatrix.Helpers;
 global using Xamarin.CommunityToolkit.UI.Views;
+global using GyverMatrix.Interfaces;
+global using System.Net.Sockets;
+global using System.Text;
+global using ColorPicker;

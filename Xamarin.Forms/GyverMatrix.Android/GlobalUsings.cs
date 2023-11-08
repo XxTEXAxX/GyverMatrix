@@ -2,3 +2,8 @@
 global using System.Globalization;
 global using GyverMatrix.Interfaces;
 global using Java.Util;
+global using Android.App;
+global using Android.Content.PM;
+global using Android.OS;
+global using Android.Runtime;
+global using SegmentedControl.FormsPlugin.Android;
