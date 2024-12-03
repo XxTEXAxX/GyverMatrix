@@ -6,7 +6,7 @@ public class Localize : ILocalize
     public CultureInfo GetCurrentCultureInfo()
     {
         var netLanguage = "ru-RU";
-        var prefLanguage = "en-US";
+        const string prefLanguage = "en-US";
         if (NSLocale.PreferredLanguages.Length > 0)
         {
             var pref = NSLocale.PreferredLanguages[0];

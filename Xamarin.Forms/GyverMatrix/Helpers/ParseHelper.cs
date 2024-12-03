@@ -30,7 +30,6 @@ internal static class ParseHelper
 
     public static async Task SetSettingsNet(string message)
     {
-
         message = message.Remove(0, 4);
         message = message.Remove(message.Length - 1, 1);
 

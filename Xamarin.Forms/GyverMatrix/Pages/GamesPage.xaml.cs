@@ -95,7 +95,6 @@ public partial class GamesPage
         object sender,
         EventArgs e)
     {
-
         GS.IsVisible = true;
         DS.IsVisible = true;
         SS.IsVisible = true;
@@ -141,7 +140,6 @@ public partial class GamesPage
         Console.WriteLine(ug1);
         Console.WriteLine(gs1);
 
-
         SpeedSlider.Value = int.Parse(sg1);
 
         BrightnessSlider.Value = int.Parse(br1);
@@ -164,7 +162,6 @@ public partial class GamesPage
         EventArgs e)
     {
         await UdpHelper.Send("$11;");
-
     }
 
     private async void TapGestureRecognizer2_Tapped(

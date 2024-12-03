@@ -40,12 +40,12 @@ public partial class EffectsPage
             case "0":
                 await UdpHelper.Send("$8 2 " + num + " 0;");
                 await SecureStorage.SetAsync("ESW" + num, mode);
-                Console.WriteLine("SwitchChanged" + "$8 2 " + num + " 0;");
+                Console.WriteLine("SwitchChanged$8 2 " + num + " 0;");
                 break;
             case "1":
                 await UdpHelper.Send("$8 2 " + num + " 1;");
                 await SecureStorage.SetAsync("ESW" + num, mode);
-                Console.WriteLine("SwitchChanged" + "$8 2 " + num + " 1;");
+                Console.WriteLine("SwitchChanged$8 2 " + num + " 1;");
                 break;
         }
     }
@@ -118,7 +118,6 @@ public partial class EffectsPage
 
         if (num > -1)
         {
-
             ES.IsVisible = true;
             HS.IsVisible = true;
             SS.IsVisible = true;
@@ -163,7 +162,6 @@ public partial class EffectsPage
                 if (message1[6].Split(':')[1] != "X")
                 {
                     x = int.Parse(message1[6].Split(':')[1]);
-
                 }
                 else
                 {

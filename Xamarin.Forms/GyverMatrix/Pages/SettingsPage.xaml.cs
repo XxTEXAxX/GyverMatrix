@@ -26,7 +26,7 @@ public partial class SettingsPage
     }
 
     private async void DemoSwitch_PropertyChanged(
-        object sender, 
+        object sender,
         PropertyChangedEventArgs e)
     {
         var mode = DemoSwitch.IsToggled ? "1" : "0";
@@ -44,18 +44,17 @@ public partial class SettingsPage
                 await SecureStorage.SetAsync("DM", mode);
                 break;
         }
-
     }
 
     private async void Undo_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         await UdpHelper.Send("$16 2;");
     }
 
     private async void Next_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         await UdpHelper.Send("$16 3;");
@@ -69,7 +68,7 @@ public partial class SettingsPage
     }
 
     private async void AutoCheck2_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         await SetAuto();
@@ -91,7 +90,6 @@ public partial class SettingsPage
         object sender,
         EventArgs e)
     {
-
         string name1 = await SecureStorage.GetAsync("AN");
         string pass1 = await SecureStorage.GetAsync("AA");
 
@@ -103,11 +101,10 @@ public partial class SettingsPage
         await UdpHelper.Send("$6 4|" + name2);
         await UdpHelper.Send("$6 5|" + pass2);
 
-
     }
 
     private async void BrightnessSlider_OnValueChanged(
-        object sender, 
+        object sender,
         ValueChangedEventArgs e)
     {
         BrightnessText.Text = ((int)((Slider)sender).Value).ToString();
@@ -118,20 +115,17 @@ public partial class SettingsPage
         object sender,
         PropertyChangedEventArgs e)
     {
-        string mode;
-
-        mode = AutoSwitch.IsToggled ? "1" : "0";
+        string mode = AutoSwitch.IsToggled ? "1" : "0";
 
         if (mode == await SecureStorage.GetAsync("AP"))
             return;
         await UdpHelper.Send("$16 4 " + mode + ";");
         await SecureStorage.SetAsync("AP", mode);
 
-
     }
 
     private async void RandomSwitch_PropertyChanged(
-        object sender, 
+        object sender,
         PropertyChangedEventArgs e)
     {
         var mode = RandomSwitch.IsToggled ? "1" : "0";
@@ -143,7 +137,7 @@ public partial class SettingsPage
     }
 
     private async void SettingsPage_OnAppearing(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         //выставление настроек яркости из хранилища
@@ -158,7 +152,6 @@ public partial class SettingsPage
         Curret.Text = await SecureStorage.GetAsync("PW");
 
         //Выставление настроек режимов из хранилища 
-
 
         string DM = await SecureStorage.GetAsync("DM"); // DM:Х        демо режим, где Х = 0 - выкл (ручное управление); 1 - вкл
         string AP = await SecureStorage.GetAsync("AP"); // AP:Х        автосменарежимов, где Х = 0 - выкл; 1 - вкл

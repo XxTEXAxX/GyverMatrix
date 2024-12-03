@@ -21,11 +21,10 @@ public partial class PaintPage : INotifyPropertyChanged
     {
         InitializeComponent();
 
-
     }
 
     private async void PaintPage_OnAppearing(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         try
@@ -35,7 +34,6 @@ public partial class PaintPage : INotifyPropertyChanged
         }
         catch
         {
-
         }
         int.TryParse(await SecureStorage.GetAsync("BR"), out var result);
         BrightnessSlider.Value = result;
@@ -56,7 +54,7 @@ public partial class PaintPage : INotifyPropertyChanged
         {
             for (int c = 0; c < _w; c++)
             {
-                Frame btn = new Frame
+                Frame btn = new()
                 {
                     BorderColor = Color.DarkOrange,
                     BackgroundColor = Color.Transparent,
@@ -71,7 +69,7 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private async void TouchEffect_TouchAction(
-        object sender, 
+        object sender,
         TouchTracking.TouchActionEventArgs args)
     {
         try
@@ -108,14 +106,13 @@ public partial class PaintPage : INotifyPropertyChanged
             for (int c = 0; c < _w; c++)
             {
 
-
                 _frames[r, c].BackgroundColor = CurrentColor;
             }
         }
     }
 
     private async void Erase_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         Erase.BackgroundColor = Color.Green;
@@ -125,7 +122,7 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private async void Brush_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         Erase.BackgroundColor = Color.Transparent;
@@ -135,7 +132,7 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private void TapGestureRecognizer_Tapped(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         PickerBlock.IsVisible = true;
@@ -143,7 +140,7 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private async void CloseColorPicker_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
         string col = _currentMode switch
@@ -159,10 +156,9 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private async void Clear_Clicked(
-        object sender, 
+        object sender,
         EventArgs e)
     {
-
         await UdpHelper.Send("$3;");
 
         for (int r = 0; r < _h; r++)
@@ -175,7 +171,7 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private void ColorTriangle_SelectedColorChanged(
-        object sender, 
+        object sender,
         ColorPicker.BaseClasses.ColorPickerEventArgs.ColorChangedEventArgs e)
     {
         ColorTriangle colorPicker = (ColorTriangle)sender;
@@ -190,7 +186,7 @@ public partial class PaintPage : INotifyPropertyChanged
     }
 
     private async void BrightnessSlider_ValueChanged(
-        object sender, 
+        object sender,
         ValueChangedEventArgs e)
     {
         BrightnessText.Text = ((int)((Slider)sender).Value).ToString();

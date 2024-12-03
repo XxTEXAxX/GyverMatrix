@@ -7,7 +7,7 @@ public partial class InfoPage
         InitializeComponent();
 
     private async void ThemeSwitch_OnToggled(
-        object sender, 
+        object sender,
         ToggledEventArgs e)
     {
         Application.Current.UserAppTheme = ThemeSwitch.IsToggled ? OSAppTheme.Dark : OSAppTheme.Light;
@@ -15,7 +15,7 @@ public partial class InfoPage
     }
 
     private async void InfoPage_OnAppearing(
-        object sender, 
+        object sender,
         EventArgs e) =>
         ThemeSwitch.IsToggled = await SecureStorage.GetAsync("Theme") == "Dark";
 }

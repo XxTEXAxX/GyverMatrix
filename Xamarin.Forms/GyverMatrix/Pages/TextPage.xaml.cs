@@ -88,7 +88,6 @@ public partial class TextPage
 
         Col.SelectedIndex = int.Parse(type);
 
-
         foreach (var t in settings)
         {
             Console.WriteLine(t);
@@ -129,7 +128,6 @@ public partial class TextPage
         object sender,
         EventArgs e)
     {
-
         Console.WriteLine("ошибка тут");
         string type = await SecureStorage.GetAsync("TypeT");
 
@@ -142,7 +140,6 @@ public partial class TextPage
         }
 
         ColorPicker.IsVisible = num == 0;
-
     }
 
     private async void ColorTriangle_SelectedColorChanged(

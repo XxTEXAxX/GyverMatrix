@@ -164,6 +164,5 @@ public partial class ConnectPage : INotifyPropertyChanged
     private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-
     #endregion
 }
